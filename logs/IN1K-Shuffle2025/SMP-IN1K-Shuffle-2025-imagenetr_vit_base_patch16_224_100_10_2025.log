@@ -1,0 +1,434 @@
+2026-07-19 16:32:49,795 [trainer.py] => config: configs/IN1K-Shuffle2025/smp_inr_B100_Inc10.json
+2026-07-19 16:32:49,796 [trainer.py] => base_model_path: 
+2026-07-19 16:32:49,796 [trainer.py] => backbone_type: vit_base_patch16_224
+2026-07-19 16:32:49,796 [trainer.py] => tag: IN1K-Shuffle2025
+2026-07-19 16:32:49,796 [trainer.py] => mid_layers: [8, 9, 10]
+2026-07-19 16:32:49,796 [trainer.py] => common_param: 0.2
+2026-07-19 16:32:49,796 [trainer.py] => common_param2: 16
+2026-07-19 16:32:49,796 [trainer.py] => merge_weight: 0.5
+2026-07-19 16:32:49,797 [trainer.py] => special_flag: False
+2026-07-19 16:32:49,797 [trainer.py] => special_tag: special
+2026-07-19 16:32:49,797 [trainer.py] => plot: False
+2026-07-19 16:32:49,797 [trainer.py] => model_name: px_d1
+2026-07-19 16:32:49,797 [trainer.py] => device: cuda:0
+2026-07-19 16:32:49,797 [trainer.py] => seed: 2025
+2026-07-19 16:32:49,797 [trainer.py] => dataset: imagenetr
+2026-07-19 16:32:49,797 [trainer.py] => data_root: /public/home/hanlida/Dr.1/Dataset
+2026-07-19 16:32:49,797 [trainer.py] => init_cls: 100
+2026-07-19 16:32:49,797 [trainer.py] => increment: 10
+2026-07-19 16:32:49,798 [trainer.py] => kshot: 5
+2026-07-19 16:32:49,798 [trainer.py] => tuned_epoch: 20
+2026-07-19 16:32:49,798 [trainer.py] => fs_epoch: 5
+2026-07-19 16:32:49,798 [trainer.py] => init_lr: 0.01
+2026-07-19 16:32:49,798 [trainer.py] => fs_lr: 0.001
+2026-07-19 16:32:49,798 [trainer.py] => batch_size: 24
+2026-07-19 16:32:49,798 [trainer.py] => fs_batch_size: 16
+2026-07-19 16:32:49,798 [trainer.py] => weight_decay: 0.005
+2026-07-19 16:32:49,798 [trainer.py] => min_lr: 0
+2026-07-19 16:32:49,798 [trainer.py] => optimizer: sgd
+2026-07-19 16:32:49,799 [trainer.py] => memory_size: 0
+2026-07-19 16:32:49,799 [trainer.py] => memory_per_class: 0
+2026-07-19 16:32:49,799 [trainer.py] => fixed_memory: False
+2026-07-19 16:32:49,799 [trainer.py] => shuffle: True
+2026-07-19 16:32:49,799 [trainer.py] => top_k: 5
+2026-07-19 16:32:49,799 [trainer.py] => rank: 10
+2026-07-19 16:32:49,799 [trainer.py] => save_checkpoints: False
+2026-07-19 16:32:49,799 [trainer.py] => saved_path: logs/px_d1/imagenetr/100_10_k5_s2025_IN1K-Shuffle2025
+2026-07-19 16:32:50,374 [data_manager.py] => [30, 0, 32, 34, 5, 49, 56, 154, 143, 82, 19, 165, 58, 106, 196, 126, 178, 80, 192, 1, 44, 31, 197, 150, 132, 149, 112, 141, 54, 104, 26, 46, 20, 156, 23, 83, 47, 129, 9, 84, 187, 130, 48, 138, 191, 108, 139, 158, 4, 66, 146, 2, 113, 142, 194, 109, 102, 166, 176, 167, 162, 131, 134, 122, 107, 96, 135, 45, 93, 136, 70, 81, 51, 17, 172, 29, 71, 57, 184, 148, 179, 43, 161, 100, 182, 37, 8, 14, 180, 189, 11, 53, 6, 24, 7, 88, 175, 183, 35, 128, 75, 186, 99, 78, 123, 133, 74, 125, 120, 89, 39, 63, 155, 65, 77, 116, 171, 114, 105, 170, 12, 121, 195, 60, 185, 110, 91, 68, 198, 59, 38, 174, 87, 28, 157, 193, 86, 147, 16, 98, 36, 61, 137, 18, 21, 103, 25, 15, 118, 72, 50, 168, 152, 190, 199, 55, 181, 92, 163, 85, 69, 177, 95, 52, 159, 169, 188, 127, 79, 42, 164, 124, 41, 90, 115, 13, 27, 73, 33, 173, 119, 145, 153, 3, 117, 64, 144, 111, 101, 151, 40, 97, 10, 22, 160, 140, 67, 76, 94, 62]
+2026-07-19 16:33:12,016 [trainer.py] => All params: 92063464
+2026-07-19 16:33:12,017 [trainer.py] => Trainable params: 92063464
+2026-07-19 16:33:12,662 [px_d1.py] => Learning on 0-100
+2026-07-19 16:33:12,681 [px_d1.py] => training set size: 11703, fc construct set size: 11703
+2026-07-19 16:37:39,399 [px_d1.py] => Task 0, Epoch 1 => Loss 5.057, Train_accy 41.03, Test_curr_accy 82.75,
+2026-07-19 16:41:52,995 [px_d1.py] => Task 0, Epoch 2 => Loss 3.573, Train_accy 55.34, Test_curr_accy 84.88,
+2026-07-19 16:46:05,864 [px_d1.py] => Task 0, Epoch 3 => Loss 3.411, Train_accy 57.34, Test_curr_accy 85.77,
+2026-07-19 16:50:20,810 [px_d1.py] => Task 0, Epoch 4 => Loss 3.293, Train_accy 59.14, Test_curr_accy 86.25,
+2026-07-19 16:54:39,212 [px_d1.py] => Task 0, Epoch 5 => Loss 3.222, Train_accy 59.33, Test_curr_accy 85.94,
+2026-07-19 16:58:55,327 [px_d1.py] => Task 0, Epoch 6 => Loss 3.072, Train_accy 61.86, Test_curr_accy 86.18,
+2026-07-19 17:03:06,070 [px_d1.py] => Task 0, Epoch 7 => Loss 3.078, Train_accy 61.99, Test_curr_accy 86.25,
+2026-07-19 17:07:20,438 [px_d1.py] => Task 0, Epoch 8 => Loss 2.860, Train_accy 64.73, Test_curr_accy 86.18,
+2026-07-19 17:11:36,024 [px_d1.py] => Task 0, Epoch 9 => Loss 2.818, Train_accy 65.55, Test_curr_accy 87.35,
+2026-07-19 17:15:52,016 [px_d1.py] => Task 0, Epoch 10 => Loss 2.715, Train_accy 66.83, Test_curr_accy 87.38,
+2026-07-19 17:20:03,441 [px_d1.py] => Task 0, Epoch 11 => Loss 2.628, Train_accy 68.54, Test_curr_accy 87.45,
+2026-07-19 17:24:17,955 [px_d1.py] => Task 0, Epoch 12 => Loss 2.521, Train_accy 69.31, Test_curr_accy 87.86,
+2026-07-19 17:28:33,099 [px_d1.py] => Task 0, Epoch 13 => Loss 2.455, Train_accy 69.79, Test_curr_accy 87.59,
+2026-07-19 17:32:48,420 [px_d1.py] => Task 0, Epoch 14 => Loss 2.399, Train_accy 71.26, Test_curr_accy 88.34,
+2026-07-19 17:37:04,422 [px_d1.py] => Task 0, Epoch 15 => Loss 2.305, Train_accy 72.40, Test_curr_accy 87.93,
+2026-07-19 17:41:14,540 [px_d1.py] => Task 0, Epoch 16 => Loss 2.217, Train_accy 73.59, Test_curr_accy 88.44,
+2026-07-19 17:45:30,175 [px_d1.py] => Task 0, Epoch 17 => Loss 2.123, Train_accy 74.31, Test_curr_accy 88.31,
+2026-07-19 17:49:44,734 [px_d1.py] => Task 0, Epoch 18 => Loss 2.117, Train_accy 74.49, Test_curr_accy 88.75,
+2026-07-19 17:54:00,297 [px_d1.py] => Task 0, Epoch 19 => Loss 2.076, Train_accy 75.10, Test_curr_accy 88.51,
+2026-07-19 17:58:13,755 [px_d1.py] => Task 0, Epoch 20 => Loss 2.067, Train_accy 75.47, Test_curr_accy 88.44,
+2026-07-19 17:58:13,758 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 17:58:13,974 [px_d1.py] => Calculate the fish information of the first model
+2026-07-19 18:00:11,807 [px_d1.py] => Calculate the fish information of the second model
+2026-07-19 18:02:09,659 [px_d1.py] => key : backbone.blocks.0.attn.lora_weight_k_1.weight , f1 : 0.009029693901538849, f2 : 0.017324956133961678 , alpha : 0.34262242913246155 , beta: 0.6573776006698608
+2026-07-19 18:02:09,662 [px_d1.py] => key : backbone.blocks.0.attn.lora_weight_v_1.weight , f1 : 0.10462450981140137, f2 : 0.1866791695356369 , alpha : 0.35915955901145935 , beta: 0.6408404111862183
+2026-07-19 18:02:09,665 [px_d1.py] => key : backbone.blocks.1.attn.lora_weight_k_1.weight , f1 : 0.008297054097056389, f2 : 0.014272288419306278 , alpha : 0.367624968290329 , beta: 0.6323750019073486
+2026-07-19 18:02:09,667 [px_d1.py] => key : backbone.blocks.1.attn.lora_weight_v_1.weight , f1 : 0.040052685886621475, f2 : 0.06561918556690216 , alpha : 0.379028856754303 , beta: 0.620971143245697
+2026-07-19 18:02:09,670 [px_d1.py] => key : backbone.blocks.2.attn.lora_weight_k_1.weight , f1 : 0.007820552214980125, f2 : 0.011135423555970192 , alpha : 0.4125639498233795 , beta: 0.5874360799789429
+2026-07-19 18:02:09,672 [px_d1.py] => key : backbone.blocks.2.attn.lora_weight_v_1.weight , f1 : 0.029971785843372345, f2 : 0.046100914478302 , alpha : 0.3939887285232544 , beta: 0.6060112714767456
+2026-07-19 18:02:09,675 [px_d1.py] => key : backbone.blocks.3.attn.lora_weight_k_1.weight , f1 : 0.018764553591609, f2 : 0.030001245439052582 , alpha : 0.38478919863700867 , beta: 0.615210771560669
+2026-07-19 18:02:09,677 [px_d1.py] => key : backbone.blocks.3.attn.lora_weight_v_1.weight , f1 : 0.07069917768239975, f2 : 0.08625315874814987 , alpha : 0.45044997334480286 , beta: 0.5495500564575195
+2026-07-19 18:02:09,680 [px_d1.py] => key : backbone.blocks.4.attn.lora_weight_k_1.weight , f1 : 0.024226680397987366, f2 : 0.03516363352537155 , alpha : 0.4079231023788452 , beta: 0.5920768976211548
+2026-07-19 18:02:09,683 [px_d1.py] => key : backbone.blocks.4.attn.lora_weight_v_1.weight , f1 : 0.08056937903165817, f2 : 0.09656108915805817 , alpha : 0.4548589587211609 , beta: 0.5451410412788391
+2026-07-19 18:02:09,685 [px_d1.py] => key : backbone.blocks.5.attn.lora_weight_k_1.weight , f1 : 0.032904237508773804, f2 : 0.03531084582209587 , alpha : 0.4823601245880127 , beta: 0.5176398754119873
+2026-07-19 18:02:09,688 [px_d1.py] => key : backbone.blocks.5.attn.lora_weight_v_1.weight , f1 : 0.05512849614024162, f2 : 0.07187271118164062 , alpha : 0.43407851457595825 , beta: 0.5659214854240417
+2026-07-19 18:02:09,691 [px_d1.py] => key : backbone.blocks.6.attn.lora_weight_k_1.weight , f1 : 0.04783662408590317, f2 : 0.062005665153265 , alpha : 0.4355027973651886 , beta: 0.5644972324371338
+2026-07-19 18:02:09,691 [px_d1.py] => key : backbone.blocks.6.attn.lora_weight_v_1.weight , f1 : 0.06899885833263397, f2 : 0.08518292754888535 , alpha : 0.4475162923336029 , beta: 0.5524836778640747
+2026-07-19 18:02:09,692 [px_d1.py] => key : backbone.blocks.7.attn.lora_weight_k_1.weight , f1 : 0.0347571037709713, f2 : 0.04562395438551903 , alpha : 0.43240416049957275 , beta: 0.5675958395004272
+2026-07-19 18:02:09,692 [px_d1.py] => key : backbone.blocks.7.attn.lora_weight_v_1.weight , f1 : 0.10122931003570557, f2 : 0.11012019962072372 , alpha : 0.4789663553237915 , beta: 0.5210336446762085
+2026-07-19 18:02:09,693 [px_d1.py] => key : backbone.blocks.8.attn.lora_weight_k_1.weight , f1 : 0.021678488701581955, f2 : 0.02128698118031025 , alpha : 0.5045560598373413 , beta: 0.4954439401626587
+2026-07-19 18:02:09,693 [px_d1.py] => key : backbone.blocks.8.attn.lora_weight_v_1.weight , f1 : 0.06342645734548569, f2 : 0.056606050580739975 , alpha : 0.5284106731414795 , beta: 0.4715893268585205
+2026-07-19 18:02:09,693 [px_d1.py] => key : backbone.blocks.9.attn.lora_weight_k_1.weight , f1 : 0.03195131942629814, f2 : 0.03059074841439724 , alpha : 0.510877251625061 , beta: 0.48912274837493896
+2026-07-19 18:02:09,693 [px_d1.py] => key : backbone.blocks.9.attn.lora_weight_v_1.weight , f1 : 0.038059476763010025, f2 : 0.029708022251725197 , alpha : 0.561618447303772 , beta: 0.438381552696228
+2026-07-19 18:02:09,694 [px_d1.py] => key : backbone.blocks.10.attn.lora_weight_k_1.weight , f1 : 0.042194291949272156, f2 : 0.024844296276569366 , alpha : 0.6294030547142029 , beta: 0.3705969452857971
+2026-07-19 18:02:09,694 [px_d1.py] => key : backbone.blocks.10.attn.lora_weight_v_1.weight , f1 : 0.023169020190835, f2 : 0.02014964260160923 , alpha : 0.5348507761955261 , beta: 0.4651492238044739
+2026-07-19 18:02:09,694 [px_d1.py] => key : backbone.blocks.11.attn.lora_weight_k_1.weight , f1 : 0.03861033916473389, f2 : 0.03592592477798462 , alpha : 0.5180074572563171 , beta: 0.48199254274368286
+2026-07-19 18:02:09,694 [px_d1.py] => key : backbone.blocks.11.attn.lora_weight_v_1.weight , f1 : 0.02154942788183689, f2 : 0.013638506643474102 , alpha : 0.6124095916748047 , beta: 0.3875904083251953
+2026-07-19 18:02:09,696 [px_d1.py] => finish the merge 
+2026-07-19 18:03:21,165 [trainer.py] => Top1 curve: [87.76]
+2026-07-19 18:03:21,166 [trainer.py] => Average Accuracy (Top1): 87.76   (Harmonic Accuracy): None (Old Acc): 87.798 (New Acc): [] 
+
+2026-07-19 18:03:21,168 [trainer.py] => All params: 134761195
+2026-07-19 18:03:21,170 [trainer.py] => Trainable params: 14155776
+2026-07-19 18:03:21,174 [px_d1.py] => Learning on 100-110
+2026-07-19 18:03:21,175 [data_manager.py] => select idxes for few shot class 100: [8889 8761 8884 8784 8844]
+2026-07-19 18:03:21,175 [data_manager.py] => select idxes for few shot class 101: [22091 22113 22237 22129 22242]
+2026-07-19 18:03:21,176 [data_manager.py] => select idxes for few shot class 102: [12340 12409 12418 12338 12371]
+2026-07-19 18:03:21,176 [data_manager.py] => select idxes for few shot class 103: [9463 9341 9481 9323 9462]
+2026-07-19 18:03:21,176 [data_manager.py] => select idxes for few shot class 104: [14994 15050 14953 15046 15007]
+2026-07-19 18:03:21,177 [data_manager.py] => select idxes for few shot class 105: [16056 16060 16083 16069 16099]
+2026-07-19 18:03:21,177 [data_manager.py] => select idxes for few shot class 106: [8666 8629 8609 8681 8658]
+2026-07-19 18:03:21,177 [data_manager.py] => select idxes for few shot class 107: [15254 15284 15279 15174 15173]
+2026-07-19 18:03:21,178 [data_manager.py] => select idxes for few shot class 108: [14750 14733 14755 14654 14625]
+2026-07-19 18:03:21,178 [data_manager.py] => select idxes for few shot class 109: [11159 11134 11047 11092 11112]
+2026-07-19 18:03:21,182 [data_manager.py] => select idxes for few shot class 100: [8914 8842 8846 8902 8786]
+2026-07-19 18:03:21,183 [data_manager.py] => select idxes for few shot class 101: [22144 22083 21941 21963 22166]
+2026-07-19 18:03:21,183 [data_manager.py] => select idxes for few shot class 102: [12423 12363 12320 12399 12324]
+2026-07-19 18:03:21,183 [data_manager.py] => select idxes for few shot class 103: [9396 9377 9331 9366 9361]
+2026-07-19 18:03:21,184 [data_manager.py] => select idxes for few shot class 104: [15031 15039 14987 14985 15010]
+2026-07-19 18:03:21,184 [data_manager.py] => select idxes for few shot class 105: [16070 16097 16095 16076 16096]
+2026-07-19 18:03:21,184 [data_manager.py] => select idxes for few shot class 106: [8624 8627 8663 8625 8696]
+2026-07-19 18:03:21,184 [data_manager.py] => select idxes for few shot class 107: [15285 15224 15231 15170 15204]
+2026-07-19 18:03:21,185 [data_manager.py] => select idxes for few shot class 108: [14629 14725 14674 14732 14689]
+2026-07-19 18:03:21,185 [data_manager.py] => select idxes for few shot class 109: [11170 11141 11088 11091 11094]
+2026-07-19 18:03:21,185 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:03:23,117 [px_d1.py] => Task 1 => classifier is built
+2026-07-19 18:04:21,440 [px_d1.py] => Task 1 => Loss 4.248, Test_accy 84.300
+2026-07-19 18:05:19,434 [px_d1.py] => Task 1 => Loss 4.261, Test_accy 84.330
+2026-07-19 18:06:18,422 [px_d1.py] => Task 1 => Loss 4.227, Test_accy 84.330
+2026-07-19 18:07:15,852 [px_d1.py] => Task 1 => Loss 4.211, Test_accy 84.330
+2026-07-19 18:08:14,242 [px_d1.py] => Task 1 => Loss 4.228, Test_accy 84.360
+2026-07-19 18:08:14,268 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:08:29,777 [trainer.py] => Top1 curve: [87.76, 84.36]
+2026-07-19 18:08:29,778 [trainer.py] => Average Accuracy (Top1): 86.06   (Harmonic Accuracy): 72.51691658856608 (Old Acc): 87.42999999999999 (New Acc): 61.95 
+
+2026-07-19 18:08:29,780 [trainer.py] => All params: 134768875
+2026-07-19 18:08:29,781 [trainer.py] => Trainable params: 84480
+2026-07-19 18:08:29,784 [px_d1.py] => Learning on 110-120
+2026-07-19 18:08:29,785 [data_manager.py] => select idxes for few shot class 110: [5441 5482 5436 5458 5468]
+2026-07-19 18:08:29,785 [data_manager.py] => select idxes for few shot class 111: [7718 7760 7783 7741 7773]
+2026-07-19 18:08:29,785 [data_manager.py] => select idxes for few shot class 112: [18061 18114 18078 18055 18063]
+2026-07-19 18:08:29,786 [data_manager.py] => select idxes for few shot class 113: [7952 7942 7926 7932 7931]
+2026-07-19 18:08:29,786 [data_manager.py] => select idxes for few shot class 114: [9243 9275 9161 9246 9207]
+2026-07-19 18:08:29,786 [data_manager.py] => select idxes for few shot class 115: [14303 14310 14266 14264 14316]
+2026-07-19 18:08:29,786 [data_manager.py] => select idxes for few shot class 116: [20140 20188 20131 20102 20130]
+2026-07-19 18:08:29,786 [data_manager.py] => select idxes for few shot class 117: [14155 14133 14159 14115 14137]
+2026-07-19 18:08:29,787 [data_manager.py] => select idxes for few shot class 118: [13142 13161 13225 13084 13227]
+2026-07-19 18:08:29,787 [data_manager.py] => select idxes for few shot class 119: [20024 19990 20033 20029 20043]
+2026-07-19 18:08:29,791 [data_manager.py] => select idxes for few shot class 110: [5462 5464 5439 5433 5472]
+2026-07-19 18:08:29,791 [data_manager.py] => select idxes for few shot class 111: [7594 7756 7683 7719 7681]
+2026-07-19 18:08:29,791 [data_manager.py] => select idxes for few shot class 112: [18075 18127 18141 18060 18099]
+2026-07-19 18:08:29,791 [data_manager.py] => select idxes for few shot class 113: [7927 7948 7941 7938 7934]
+2026-07-19 18:08:29,791 [data_manager.py] => select idxes for few shot class 114: [9179 9287 9185 9209 9288]
+2026-07-19 18:08:29,792 [data_manager.py] => select idxes for few shot class 115: [14276 14259 14286 14264 14315]
+2026-07-19 18:08:29,792 [data_manager.py] => select idxes for few shot class 116: [20108 20184 20121 20182 20164]
+2026-07-19 18:08:29,792 [data_manager.py] => select idxes for few shot class 117: [14148 14168 14156 14138 14116]
+2026-07-19 18:08:29,792 [data_manager.py] => select idxes for few shot class 118: [13077 13066 13145 13214 13201]
+2026-07-19 18:08:29,792 [data_manager.py] => select idxes for few shot class 119: [20018 20004 19984 20039 19995]
+2026-07-19 18:08:29,793 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:08:31,428 [px_d1.py] => Task 2 => classifier is built
+2026-07-19 18:09:27,795 [px_d1.py] => Task 2 => Loss 3.939, Test_accy 83.460
+2026-07-19 18:10:24,357 [px_d1.py] => Task 2 => Loss 3.957, Test_accy 83.570
+2026-07-19 18:11:20,286 [px_d1.py] => Task 2 => Loss 3.917, Test_accy 83.600
+2026-07-19 18:12:12,975 [px_d1.py] => Task 2 => Loss 3.935, Test_accy 83.630
+2026-07-19 18:13:09,119 [px_d1.py] => Task 2 => Loss 3.951, Test_accy 83.660
+2026-07-19 18:13:09,146 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:13:26,050 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66]
+2026-07-19 18:13:26,050 [trainer.py] => Average Accuracy (Top1): 85.26   (Harmonic Accuracy): 76.85751794871797 (Old Acc): 87.44000000000001 (New Acc): 68.56 
+
+2026-07-19 18:13:26,052 [trainer.py] => All params: 134776555
+2026-07-19 18:13:26,054 [trainer.py] => Trainable params: 92160
+2026-07-19 18:13:26,059 [px_d1.py] => Learning on 120-130
+2026-07-19 18:13:26,060 [data_manager.py] => select idxes for few shot class 120: [1723 1735 1631 1651 1645]
+2026-07-19 18:13:26,060 [data_manager.py] => select idxes for few shot class 121: [14809 14815 14789 14825 14832]
+2026-07-19 18:13:26,060 [data_manager.py] => select idxes for few shot class 122: [23389 23403 23353 23413 23381]
+2026-07-19 18:13:26,060 [data_manager.py] => select idxes for few shot class 123: [7279 7265 7255 7267 7245]
+2026-07-19 18:13:26,061 [data_manager.py] => select idxes for few shot class 124: [21840 21823 21917 21903 21887]
+2026-07-19 18:13:26,061 [data_manager.py] => select idxes for few shot class 125: [13695 13721 13774 13737 13735]
+2026-07-19 18:13:26,061 [data_manager.py] => select idxes for few shot class 126: [11262 11307 11267 11248 11246]
+2026-07-19 18:13:26,061 [data_manager.py] => select idxes for few shot class 127: [8105 8107 8087 8067 8080]
+2026-07-19 18:13:26,061 [data_manager.py] => select idxes for few shot class 128: [23730 23846 23779 23778 23719]
+2026-07-19 18:13:26,062 [data_manager.py] => select idxes for few shot class 129: [7163 7114 7103 7159 7152]
+2026-07-19 18:13:26,066 [data_manager.py] => select idxes for few shot class 120: [1708 1763 1722 1644 1758]
+2026-07-19 18:13:26,066 [data_manager.py] => select idxes for few shot class 121: [14784 14838 14817 14803 14812]
+2026-07-19 18:13:26,066 [data_manager.py] => select idxes for few shot class 122: [23371 23403 23357 23356 23380]
+2026-07-19 18:13:26,067 [data_manager.py] => select idxes for few shot class 123: [7257 7250 7278 7243 7264]
+2026-07-19 18:13:26,067 [data_manager.py] => select idxes for few shot class 124: [21896 21890 21894 21859 21903]
+2026-07-19 18:13:26,067 [data_manager.py] => select idxes for few shot class 125: [13752 13769 13753 13706 13674]
+2026-07-19 18:13:26,067 [data_manager.py] => select idxes for few shot class 126: [11305 11238 11273 11290 11266]
+2026-07-19 18:13:26,067 [data_manager.py] => select idxes for few shot class 127: [8088 8099 8074 8070 8078]
+2026-07-19 18:13:26,068 [data_manager.py] => select idxes for few shot class 128: [23812 23837 23778 23775 23743]
+2026-07-19 18:13:26,068 [data_manager.py] => select idxes for few shot class 129: [7147 7164 7123 7149 7225]
+2026-07-19 18:13:26,068 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:13:27,507 [px_d1.py] => Task 3 => classifier is built
+2026-07-19 18:14:22,752 [px_d1.py] => Task 3 => Loss 3.732, Test_accy 83.180
+2026-07-19 18:15:20,357 [px_d1.py] => Task 3 => Loss 3.682, Test_accy 83.180
+2026-07-19 18:16:15,727 [px_d1.py] => Task 3 => Loss 3.677, Test_accy 83.210
+2026-07-19 18:17:15,169 [px_d1.py] => Task 3 => Loss 3.682, Test_accy 83.210
+2026-07-19 18:18:12,358 [px_d1.py] => Task 3 => Loss 3.654, Test_accy 83.210
+2026-07-19 18:18:12,389 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:18:32,093 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21]
+2026-07-19 18:18:32,094 [trainer.py] => Average Accuracy (Top1): 84.7475   (Harmonic Accuracy): 78.83373976639419 (Old Acc): 87.277 (New Acc): 71.88 
+
+2026-07-19 18:18:32,095 [trainer.py] => All params: 134784235
+2026-07-19 18:18:32,096 [trainer.py] => Trainable params: 99840
+2026-07-19 18:18:32,099 [px_d1.py] => Learning on 130-140
+2026-07-19 18:18:32,100 [data_manager.py] => select idxes for few shot class 130: [5424 5360 5316 5363 5314]
+2026-07-19 18:18:32,100 [data_manager.py] => select idxes for few shot class 131: [20530 20473 20424 20521 20465]
+2026-07-19 18:18:32,101 [data_manager.py] => select idxes for few shot class 132: [10781 10745 10803 10780 10892]
+2026-07-19 18:18:32,101 [data_manager.py] => select idxes for few shot class 133: [4066 4226 4223 4111 4107]
+2026-07-19 18:18:32,101 [data_manager.py] => select idxes for few shot class 134: [18347 18335 18334 18368 18373]
+2026-07-19 18:18:32,101 [data_manager.py] => select idxes for few shot class 135: [23234 23251 23222 23298 23277]
+2026-07-19 18:18:32,102 [data_manager.py] => select idxes for few shot class 136: [10580 10733 10558 10683 10652]
+2026-07-19 18:18:32,102 [data_manager.py] => select idxes for few shot class 137: [17475 17512 17486 17524 17473]
+2026-07-19 18:18:32,102 [data_manager.py] => select idxes for few shot class 138: [2182 2211 2127 2201 2115]
+2026-07-19 18:18:32,102 [data_manager.py] => select idxes for few shot class 139: [12162 12220 12289 12224 12135]
+2026-07-19 18:18:32,106 [data_manager.py] => select idxes for few shot class 130: [5410 5348 5386 5375 5370]
+2026-07-19 18:18:32,106 [data_manager.py] => select idxes for few shot class 131: [20487 20518 20490 20481 20430]
+2026-07-19 18:18:32,107 [data_manager.py] => select idxes for few shot class 132: [10770 10879 10909 10857 10775]
+2026-07-19 18:18:32,107 [data_manager.py] => select idxes for few shot class 133: [4119 4101 4150 4074 4211]
+2026-07-19 18:18:32,107 [data_manager.py] => select idxes for few shot class 134: [18374 18371 18373 18355 18317]
+2026-07-19 18:18:32,107 [data_manager.py] => select idxes for few shot class 135: [23280 23228 23282 23241 23190]
+2026-07-19 18:18:32,107 [data_manager.py] => select idxes for few shot class 136: [10549 10616 10569 10625 10608]
+2026-07-19 18:18:32,108 [data_manager.py] => select idxes for few shot class 137: [17471 17501 17531 17521 17474]
+2026-07-19 18:18:32,108 [data_manager.py] => select idxes for few shot class 138: [2194 2228 2151 2174 2175]
+2026-07-19 18:18:32,108 [data_manager.py] => select idxes for few shot class 139: [12256 12156 12240 12144 12251]
+2026-07-19 18:18:32,108 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:18:33,453 [px_d1.py] => Task 4 => classifier is built
+2026-07-19 18:19:30,636 [px_d1.py] => Task 4 => Loss 3.536, Test_accy 82.190
+2026-07-19 18:20:27,595 [px_d1.py] => Task 4 => Loss 3.520, Test_accy 82.240
+2026-07-19 18:21:23,644 [px_d1.py] => Task 4 => Loss 3.508, Test_accy 82.290
+2026-07-19 18:22:17,947 [px_d1.py] => Task 4 => Loss 3.459, Test_accy 82.360
+2026-07-19 18:23:13,586 [px_d1.py] => Task 4 => Loss 3.485, Test_accy 82.310
+2026-07-19 18:23:13,618 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:23:34,073 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31]
+2026-07-19 18:23:34,074 [trainer.py] => Average Accuracy (Top1): 84.26   (Harmonic Accuracy): 79.17074296308358 (Old Acc): 87.078 (New Acc): 72.58 
+
+2026-07-19 18:23:34,075 [trainer.py] => All params: 134791915
+2026-07-19 18:23:34,076 [trainer.py] => Trainable params: 107520
+2026-07-19 18:23:34,081 [px_d1.py] => Learning on 140-150
+2026-07-19 18:23:34,082 [data_manager.py] => select idxes for few shot class 140: [5149 5157 5228 5102 5113]
+2026-07-19 18:23:34,082 [data_manager.py] => select idxes for few shot class 141: [7335 7367 7290 7371 7390]
+2026-07-19 18:23:34,082 [data_manager.py] => select idxes for few shot class 142: [16617 16544 16610 16538 16534]
+2026-07-19 18:23:34,082 [data_manager.py] => select idxes for few shot class 143: [2438 2452 2380 2418 2424]
+2026-07-19 18:23:34,083 [data_manager.py] => select idxes for few shot class 144: [2712 2750 2703 2909 2724]
+2026-07-19 18:23:34,083 [data_manager.py] => select idxes for few shot class 145: [12797 12835 12798 12842 12773]
+2026-07-19 18:23:34,083 [data_manager.py] => select idxes for few shot class 146: [3546 3513 3539 3547 3501]
+2026-07-19 18:23:34,083 [data_manager.py] => select idxes for few shot class 147: [2081 2029 2014 2022 2006]
+2026-07-19 18:23:34,083 [data_manager.py] => select idxes for few shot class 148: [14450 14455 14472 14502 14439]
+2026-07-19 18:23:34,084 [data_manager.py] => select idxes for few shot class 149: [8443 8489 8449 8474 8550]
+2026-07-19 18:23:34,088 [data_manager.py] => select idxes for few shot class 140: [5223 5142 5186 5070 5124]
+2026-07-19 18:23:34,088 [data_manager.py] => select idxes for few shot class 141: [7384 7330 7289 7401 7297]
+2026-07-19 18:23:34,088 [data_manager.py] => select idxes for few shot class 142: [16588 16644 16616 16537 16533]
+2026-07-19 18:23:34,088 [data_manager.py] => select idxes for few shot class 143: [2446 2375 2436 2448 2395]
+2026-07-19 18:23:34,088 [data_manager.py] => select idxes for few shot class 144: [2840 2703 2888 2836 2833]
+2026-07-19 18:23:34,089 [data_manager.py] => select idxes for few shot class 145: [12788 12871 12805 12834 12818]
+2026-07-19 18:23:34,089 [data_manager.py] => select idxes for few shot class 146: [3518 3546 3493 3507 3526]
+2026-07-19 18:23:34,089 [data_manager.py] => select idxes for few shot class 147: [2011 2005 2052 2038 2069]
+2026-07-19 18:23:34,089 [data_manager.py] => select idxes for few shot class 148: [14483 14507 14477 14437 14486]
+2026-07-19 18:23:34,089 [data_manager.py] => select idxes for few shot class 149: [8450 8485 8492 8458 8442]
+2026-07-19 18:23:34,090 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:23:35,190 [px_d1.py] => Task 5 => classifier is built
+2026-07-19 18:24:33,125 [px_d1.py] => Task 5 => Loss 3.361, Test_accy 81.800
+2026-07-19 18:25:29,958 [px_d1.py] => Task 5 => Loss 3.308, Test_accy 81.820
+2026-07-19 18:26:27,908 [px_d1.py] => Task 5 => Loss 3.310, Test_accy 81.800
+2026-07-19 18:27:24,997 [px_d1.py] => Task 5 => Loss 3.309, Test_accy 81.780
+2026-07-19 18:28:22,066 [px_d1.py] => Task 5 => Loss 3.317, Test_accy 81.760
+2026-07-19 18:28:22,095 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:28:42,683 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31, 81.76]
+2026-07-19 18:28:42,683 [trainer.py] => Average Accuracy (Top1): 83.84333333333333   (Harmonic Accuracy): 79.5268587940859 (Old Acc): 86.969 (New Acc): 73.25800000000001 
+
+2026-07-19 18:28:42,685 [trainer.py] => All params: 134799595
+2026-07-19 18:28:42,687 [trainer.py] => Trainable params: 115200
+2026-07-19 18:28:42,687 [px_d1.py] => Learning on 150-160
+2026-07-19 18:28:42,688 [data_manager.py] => select idxes for few shot class 150: [6404 6427 6410 6416 6433]
+2026-07-19 18:28:42,688 [data_manager.py] => select idxes for few shot class 151: [19720 19699 19689 19706 19665]
+2026-07-19 18:28:42,689 [data_manager.py] => select idxes for few shot class 152: [17787 17796 17812 17816 17819]
+2026-07-19 18:28:42,689 [data_manager.py] => select idxes for few shot class 153: [22755 22772 22740 22725 22877]
+2026-07-19 18:28:42,689 [data_manager.py] => select idxes for few shot class 154: [23961 23885 23895 23921 23902]
+2026-07-19 18:28:42,689 [data_manager.py] => select idxes for few shot class 155: [6809 6826 6815 6776 6786]
+2026-07-19 18:28:42,690 [data_manager.py] => select idxes for few shot class 156: [21393 21389 21433 21426 21439]
+2026-07-19 18:28:42,690 [data_manager.py] => select idxes for few shot class 157: [11330 11360 11331 11324 11346]
+2026-07-19 18:28:42,690 [data_manager.py] => select idxes for few shot class 158: [19094 19045 19059 19010 19065]
+2026-07-19 18:28:42,690 [data_manager.py] => select idxes for few shot class 159: [10510 10527 10472 10523 10496]
+2026-07-19 18:28:42,694 [data_manager.py] => select idxes for few shot class 150: [6422 6380 6439 6423 6395]
+2026-07-19 18:28:42,695 [data_manager.py] => select idxes for few shot class 151: [19652 19668 19699 19650 19644]
+2026-07-19 18:28:42,695 [data_manager.py] => select idxes for few shot class 152: [17815 17829 17805 17810 17814]
+2026-07-19 18:28:42,695 [data_manager.py] => select idxes for few shot class 153: [22728 22781 22754 22835 22856]
+2026-07-19 18:28:42,695 [data_manager.py] => select idxes for few shot class 154: [23904 23974 23994 23963 23868]
+2026-07-19 18:28:42,696 [data_manager.py] => select idxes for few shot class 155: [6834 6843 6781 6833 6799]
+2026-07-19 18:28:42,696 [data_manager.py] => select idxes for few shot class 156: [21442 21526 21457 21514 21443]
+2026-07-19 18:28:42,696 [data_manager.py] => select idxes for few shot class 157: [11334 11318 11319 11326 11349]
+2026-07-19 18:28:42,696 [data_manager.py] => select idxes for few shot class 158: [19073 18968 19090 18951 18979]
+2026-07-19 18:28:42,696 [data_manager.py] => select idxes for few shot class 159: [10464 10517 10525 10469 10482]
+2026-07-19 18:28:42,696 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:28:44,265 [px_d1.py] => Task 6 => classifier is built
+2026-07-19 18:29:44,391 [px_d1.py] => Task 6 => Loss 3.191, Test_accy 80.250
+2026-07-19 18:30:46,293 [px_d1.py] => Task 6 => Loss 3.196, Test_accy 80.300
+2026-07-19 18:31:47,951 [px_d1.py] => Task 6 => Loss 3.173, Test_accy 80.320
+2026-07-19 18:32:49,309 [px_d1.py] => Task 6 => Loss 3.147, Test_accy 80.340
+2026-07-19 18:33:51,146 [px_d1.py] => Task 6 => Loss 3.151, Test_accy 80.320
+2026-07-19 18:33:51,179 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:34:14,000 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31, 81.76, 80.32]
+2026-07-19 18:34:14,000 [trainer.py] => Average Accuracy (Top1): 83.34   (Harmonic Accuracy): 78.16183301854504 (Old Acc): 86.463 (New Acc): 71.31500000000001 
+
+2026-07-19 18:34:14,002 [trainer.py] => All params: 134807275
+2026-07-19 18:34:14,003 [trainer.py] => Trainable params: 122880
+2026-07-19 18:34:14,006 [px_d1.py] => Learning on 160-170
+2026-07-19 18:34:14,007 [data_manager.py] => select idxes for few shot class 160: [8162 8146 8165 8121 8177]
+2026-07-19 18:34:14,007 [data_manager.py] => select idxes for few shot class 161: [20791 20891 20901 20904 20938]
+2026-07-19 18:34:14,007 [data_manager.py] => select idxes for few shot class 162: [11674 11727 11676 11743 11641]
+2026-07-19 18:34:14,008 [data_manager.py] => select idxes for few shot class 163: [6589 6579 6597 6561 6562]
+2026-07-19 18:34:14,008 [data_manager.py] => select idxes for few shot class 164: [18497 18625 18634 18526 18601]
+2026-07-19 18:34:14,008 [data_manager.py] => select idxes for few shot class 165: [19784 19837 19942 19797 19773]
+2026-07-19 18:34:14,008 [data_manager.py] => select idxes for few shot class 166: [22538 22482 22471 22371 22495]
+2026-07-19 18:34:14,009 [data_manager.py] => select idxes for few shot class 167: [15469 15443 15511 15449 15458]
+2026-07-19 18:34:14,009 [data_manager.py] => select idxes for few shot class 168: [9497 9597 9584 9561 9491]
+2026-07-19 18:34:14,009 [data_manager.py] => select idxes for few shot class 169: [5718 5725 5763 5682 5673]
+2026-07-19 18:34:14,014 [data_manager.py] => select idxes for few shot class 160: [8123 8138 8173 8126 8168]
+2026-07-19 18:34:14,014 [data_manager.py] => select idxes for few shot class 161: [20932 20793 20976 20953 20884]
+2026-07-19 18:34:14,014 [data_manager.py] => select idxes for few shot class 162: [11725 11760 11658 11617 11734]
+2026-07-19 18:34:14,014 [data_manager.py] => select idxes for few shot class 163: [6600 6610 6594 6564 6563]
+2026-07-19 18:34:14,015 [data_manager.py] => select idxes for few shot class 164: [18522 18607 18648 18616 18538]
+2026-07-19 18:34:14,015 [data_manager.py] => select idxes for few shot class 165: [19892 19865 19834 19923 19838]
+2026-07-19 18:34:14,015 [data_manager.py] => select idxes for few shot class 166: [22407 22526 22400 22410 22414]
+2026-07-19 18:34:14,015 [data_manager.py] => select idxes for few shot class 167: [15454 15448 15479 15493 15477]
+2026-07-19 18:34:14,015 [data_manager.py] => select idxes for few shot class 168: [9565 9488 9521 9513 9585]
+2026-07-19 18:34:14,016 [data_manager.py] => select idxes for few shot class 169: [5708 5696 5699 5760 5683]
+2026-07-19 18:34:14,016 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:34:15,484 [px_d1.py] => Task 7 => classifier is built
+2026-07-19 18:35:19,325 [px_d1.py] => Task 7 => Loss 3.031, Test_accy 79.550
+2026-07-19 18:36:22,395 [px_d1.py] => Task 7 => Loss 3.021, Test_accy 79.520
+2026-07-19 18:37:27,120 [px_d1.py] => Task 7 => Loss 2.993, Test_accy 79.460
+2026-07-19 18:38:31,652 [px_d1.py] => Task 7 => Loss 2.998, Test_accy 79.480
+2026-07-19 18:39:35,645 [px_d1.py] => Task 7 => Loss 3.003, Test_accy 79.520
+2026-07-19 18:39:35,684 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:40:00,730 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31, 81.76, 80.32, 79.52]
+2026-07-19 18:40:00,730 [trainer.py] => Average Accuracy (Top1): 82.8625   (Harmonic Accuracy): 77.98103444113366 (Old Acc): 86.219 (New Acc): 71.17999999999999 
+
+2026-07-19 18:40:00,732 [trainer.py] => All params: 134814955
+2026-07-19 18:40:00,733 [trainer.py] => Trainable params: 130560
+2026-07-19 18:40:00,737 [px_d1.py] => Learning on 170-180
+2026-07-19 18:40:00,738 [data_manager.py] => select idxes for few shot class 170: [19180 19226 19274 19186 19181]
+2026-07-19 18:40:00,738 [data_manager.py] => select idxes for few shot class 171: [15155 15053 15096 15080 15107]
+2026-07-19 18:40:00,739 [data_manager.py] => select idxes for few shot class 172: [5648 5668 5662 5642 5647]
+2026-07-19 18:40:00,739 [data_manager.py] => select idxes for few shot class 173: [11230 11223 11222 11220 11233]
+2026-07-19 18:40:00,739 [data_manager.py] => select idxes for few shot class 174: [14187 14230 14184 14242 14218]
+2026-07-19 18:40:00,739 [data_manager.py] => select idxes for few shot class 175: [1799 1841 1810 1826 1809]
+2026-07-19 18:40:00,739 [data_manager.py] => select idxes for few shot class 176: [3921 3832 3993 3962 4011]
+2026-07-19 18:40:00,740 [data_manager.py] => select idxes for few shot class 177: [8560 8579 8570 8580 8592]
+2026-07-19 18:40:00,740 [data_manager.py] => select idxes for few shot class 178: [4927 4830 4838 4832 4825]
+2026-07-19 18:40:00,740 [data_manager.py] => select idxes for few shot class 179: [20319 20397 20362 20389 20356]
+2026-07-19 18:40:00,745 [data_manager.py] => select idxes for few shot class 170: [19163 19096 19209 19266 19095]
+2026-07-19 18:40:00,745 [data_manager.py] => select idxes for few shot class 171: [15070 15114 15074 15091 15118]
+2026-07-19 18:40:00,745 [data_manager.py] => select idxes for few shot class 172: [5593 5614 5560 5615 5578]
+2026-07-19 18:40:00,746 [data_manager.py] => select idxes for few shot class 173: [11210 11196 11218 11211 11231]
+2026-07-19 18:40:00,746 [data_manager.py] => select idxes for few shot class 174: [14221 14188 14231 14245 14202]
+2026-07-19 18:40:00,746 [data_manager.py] => select idxes for few shot class 175: [1805 1808 1795 1803 1845]
+2026-07-19 18:40:00,746 [data_manager.py] => select idxes for few shot class 176: [3922 3881 3941 3869 4041]
+2026-07-19 18:40:00,746 [data_manager.py] => select idxes for few shot class 177: [8575 8582 8574 8567 8584]
+2026-07-19 18:40:00,747 [data_manager.py] => select idxes for few shot class 178: [4884 4933 4909 4845 4886]
+2026-07-19 18:40:00,747 [data_manager.py] => select idxes for few shot class 179: [20374 20403 20384 20285 20312]
+2026-07-19 18:40:00,747 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:40:02,452 [px_d1.py] => Task 8 => classifier is built
+2026-07-19 18:41:16,157 [px_d1.py] => Task 8 => Loss 2.914, Test_accy 78.430
+2026-07-19 18:42:30,445 [px_d1.py] => Task 8 => Loss 2.925, Test_accy 78.540
+2026-07-19 18:43:44,406 [px_d1.py] => Task 8 => Loss 2.903, Test_accy 78.600
+2026-07-19 18:44:58,409 [px_d1.py] => Task 8 => Loss 2.873, Test_accy 78.600
+2026-07-19 18:46:09,135 [px_d1.py] => Task 8 => Loss 2.894, Test_accy 78.600
+2026-07-19 18:46:09,175 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:46:34,865 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31, 81.76, 80.32, 79.52, 78.6]
+2026-07-19 18:46:34,865 [trainer.py] => Average Accuracy (Top1): 82.38888888888889   (Harmonic Accuracy): 77.49093794667456 (Old Acc): 86.075 (New Acc): 70.46375 
+
+2026-07-19 18:46:34,867 [trainer.py] => All params: 134822635
+2026-07-19 18:46:34,868 [trainer.py] => Trainable params: 138240
+2026-07-19 18:46:34,871 [px_d1.py] => Learning on 180-190
+2026-07-19 18:46:34,872 [data_manager.py] => select idxes for few shot class 180: [14533 14606 14587 14574 14536]
+2026-07-19 18:46:34,872 [data_manager.py] => select idxes for few shot class 181: [17313 17320 17374 17380 17316]
+2026-07-19 18:46:34,872 [data_manager.py] => select idxes for few shot class 182: [17903 17890 17901 17864 17933]
+2026-07-19 18:46:34,872 [data_manager.py] => select idxes for few shot class 183: [560 516 525 578 575]
+2026-07-19 18:46:34,872 [data_manager.py] => select idxes for few shot class 184: [14360 14386 14363 14332 14340]
+2026-07-19 18:46:34,873 [data_manager.py] => select idxes for few shot class 185: [7871 7874 7873 7858 7869]
+2026-07-19 18:46:34,873 [data_manager.py] => select idxes for few shot class 186: [17208 17267 17242 17215 17212]
+2026-07-19 18:46:34,873 [data_manager.py] => select idxes for few shot class 187: [13847 13870 13874 13849 13865]
+2026-07-19 18:46:34,873 [data_manager.py] => select idxes for few shot class 188: [12642 12613 12579 12605 12609]
+2026-07-19 18:46:34,874 [data_manager.py] => select idxes for few shot class 189: [17759 17741 17718 17750 17746]
+2026-07-19 18:46:34,879 [data_manager.py] => select idxes for few shot class 180: [14604 14535 14578 14541 14572]
+2026-07-19 18:46:34,879 [data_manager.py] => select idxes for few shot class 181: [17332 17316 17348 17309 17392]
+2026-07-19 18:46:34,879 [data_manager.py] => select idxes for few shot class 182: [17908 17889 17857 17840 17853]
+2026-07-19 18:46:34,880 [data_manager.py] => select idxes for few shot class 183: [545 505 574 522 550]
+2026-07-19 18:46:34,880 [data_manager.py] => select idxes for few shot class 184: [14331 14354 14361 14378 14351]
+2026-07-19 18:46:34,880 [data_manager.py] => select idxes for few shot class 185: [7893 7852 7904 7846 7892]
+2026-07-19 18:46:34,880 [data_manager.py] => select idxes for few shot class 186: [17261 17282 17224 17286 17279]
+2026-07-19 18:46:34,880 [data_manager.py] => select idxes for few shot class 187: [13865 13804 13913 13796 13863]
+2026-07-19 18:46:34,880 [data_manager.py] => select idxes for few shot class 188: [12650 12548 12612 12610 12552]
+2026-07-19 18:46:34,881 [data_manager.py] => select idxes for few shot class 189: [17708 17710 17712 17757 17714]
+2026-07-19 18:46:34,881 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:46:36,719 [px_d1.py] => Task 9 => classifier is built
+2026-07-19 18:47:46,353 [px_d1.py] => Task 9 => Loss 2.818, Test_accy 77.960
+2026-07-19 18:48:55,495 [px_d1.py] => Task 9 => Loss 2.812, Test_accy 78.010
+2026-07-19 18:50:05,780 [px_d1.py] => Task 9 => Loss 2.814, Test_accy 78.030
+2026-07-19 18:51:15,390 [px_d1.py] => Task 9 => Loss 2.791, Test_accy 78.010
+2026-07-19 18:52:25,369 [px_d1.py] => Task 9 => Loss 2.799, Test_accy 78.010
+2026-07-19 18:52:25,412 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:52:53,215 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31, 81.76, 80.32, 79.52, 78.6, 78.01]
+2026-07-19 18:52:53,216 [trainer.py] => Average Accuracy (Top1): 81.951   (Harmonic Accuracy): 77.13632262868913 (Old Acc): 85.975 (New Acc): 69.94555555555557 
+
+2026-07-19 18:52:53,217 [trainer.py] => All params: 134830315
+2026-07-19 18:52:53,218 [trainer.py] => Trainable params: 145920
+2026-07-19 18:52:53,223 [px_d1.py] => Learning on 190-200
+2026-07-19 18:52:53,224 [data_manager.py] => select idxes for few shot class 190: [5526 5545 5510 5534 5507]
+2026-07-19 18:52:53,224 [data_manager.py] => select idxes for few shot class 191: [12045 12005 12050 11981 12031]
+2026-07-19 18:52:53,224 [data_manager.py] => select idxes for few shot class 192: [1456 1485 1469 1479 1427]
+2026-07-19 18:52:53,224 [data_manager.py] => select idxes for few shot class 193: [3086 3031 3117 3055 3160]
+2026-07-19 18:52:53,224 [data_manager.py] => select idxes for few shot class 194: [18658 18735 18700 18758 18717]
+2026-07-19 18:52:53,225 [data_manager.py] => select idxes for few shot class 195: [16857 16887 16865 16896 16859]
+2026-07-19 18:52:53,225 [data_manager.py] => select idxes for few shot class 196: [8022 8028 8024 8065 8064]
+2026-07-19 18:52:53,225 [data_manager.py] => select idxes for few shot class 197: [9109 9137 9061 9082 9076]
+2026-07-19 18:52:53,225 [data_manager.py] => select idxes for few shot class 198: [11524 11568 11531 11534 11595]
+2026-07-19 18:52:53,225 [data_manager.py] => select idxes for few shot class 199: [7547 7411 7409 7461 7558]
+2026-07-19 18:52:53,231 [data_manager.py] => select idxes for few shot class 190: [5488 5496 5542 5497 5539]
+2026-07-19 18:52:53,231 [data_manager.py] => select idxes for few shot class 191: [12028 12039 12001 12040 12015]
+2026-07-19 18:52:53,231 [data_manager.py] => select idxes for few shot class 192: [1455 1456 1466 1439 1453]
+2026-07-19 18:52:53,231 [data_manager.py] => select idxes for few shot class 193: [3086 3189 3157 3167 3066]
+2026-07-19 18:52:53,231 [data_manager.py] => select idxes for few shot class 194: [18712 18680 18715 18725 18689]
+2026-07-19 18:52:53,232 [data_manager.py] => select idxes for few shot class 195: [16910 16872 16861 16880 16860]
+2026-07-19 18:52:53,232 [data_manager.py] => select idxes for few shot class 196: [8054 8031 8064 8023 8044]
+2026-07-19 18:52:53,232 [data_manager.py] => select idxes for few shot class 197: [9148 9116 9080 9143 9159]
+2026-07-19 18:52:53,232 [data_manager.py] => select idxes for few shot class 198: [11578 11563 11561 11555 11572]
+2026-07-19 18:52:53,232 [data_manager.py] => select idxes for few shot class 199: [7486 7414 7508 7439 7516]
+2026-07-19 18:52:53,233 [px_d1.py] => training set size: 50, fc construct set size: 50
+2026-07-19 18:52:54,513 [px_d1.py] => Task 10 => classifier is built
+2026-07-19 18:54:07,749 [px_d1.py] => Task 10 => Loss 2.711, Test_accy 77.780
+2026-07-19 18:55:20,813 [px_d1.py] => Task 10 => Loss 2.695, Test_accy 77.850
+2026-07-19 18:56:33,763 [px_d1.py] => Task 10 => Loss 2.673, Test_accy 77.800
+2026-07-19 18:57:47,423 [px_d1.py] => Task 10 => Loss 2.668, Test_accy 77.830
+2026-07-19 18:59:00,947 [px_d1.py] => Task 10 => Loss 2.665, Test_accy 77.830
+2026-07-19 18:59:00,984 [px_d1.py] => Checkpoint saving is disabled for this experiment.
+2026-07-19 18:59:29,841 [trainer.py] => Top1 curve: [87.76, 84.36, 83.66, 83.21, 82.31, 81.76, 80.32, 79.52, 78.6, 78.01, 77.83]
+2026-07-19 18:59:29,841 [trainer.py] => Average Accuracy (Top1): 81.57636363636364   (Harmonic Accuracy): 77.46972534202787 (Old Acc): 85.81899999999999 (New Acc): 70.601 
+
+2026-07-19 18:59:29,842 [trainer.py] => 
+

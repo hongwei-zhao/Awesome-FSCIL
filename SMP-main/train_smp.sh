@@ -4,6 +4,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+# utils/data.py gives this environment variable precedence over each JSON file.
+export FSCIL_DATA_ROOT="${FSCIL_DATA_ROOT:-/home/team/zhaohongwei/Dataset}"
+
 readonly SHEETS=(
     "IN1K-NoShuffle1993"
     "IN1K-Shuffle1993"

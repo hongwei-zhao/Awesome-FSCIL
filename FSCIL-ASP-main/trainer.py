@@ -12,6 +12,16 @@ from utils import factory
 from utils.data_manager import DataManager
 from utils.toolkit import count_parameters
 
+REPOSITORY_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if REPOSITORY_ROOT not in sys.path:
+    sys.path.append(REPOSITORY_ROOT)
+from transfer_metrics import (
+    backward_transfer,
+    compute_simplecil_baseline,
+    forward_transfer_or_unavailable,
+    task_accuracy_row,
+)
+
 
 def _resolve_cuda_device_id(args):
     if not torch.cuda.is_available():
@@ -351,9 +361,12 @@ def train(args):
 
 def _train(args):
     init_cls = args["init_cls"]
-    logs_name = "logs/{}/{}/{}/{}_{}".format(
-        args["model_name"], args["dataset"], init_cls, args["increment"], args["kshot"]
-    )
+    backbone_name = args["backbone_type"].removeprefix("pretrained_")
+    pretraining_group = "IN21K" if "in21k" in backbone_name.lower() else "IN1K"
+    order_group = "Shuffle" if args.get("shuffle", False) else "NoShuffle"
+    setting_dir = "{}-{}{}".format(pretraining_group, order_group, args["seed"])
+    repository_log_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "logs"))
+    logs_name = os.path.join(repository_log_root, setting_dir)
     saved_path = "saved_model/{}/{}/{}_{}".format(
         args["model_name"], args["dataset"], init_cls, args["increment"]
     )
@@ -363,19 +376,17 @@ def _train(args):
     if not os.path.exists(saved_path):
         os.makedirs(saved_path)
 
-    logfilename = "logs/{}/{}/{}/{}_{}/{}_{}_{}".format(
-        args["model_name"],
-        args["dataset"],
-        init_cls,
-        args["increment"],
-        args["kshot"],
-        args["prefix"],
-        args["seed"],
-        args["backbone_type"],
+    logfilename = os.path.join(
+        logs_name,
+        "ASP-{}-{}_{}_{}_{}_{}".format(
+            setting_dir.replace("Shuffle", "Shuffle-").replace("NoShuffle", "NoShuffle-"),
+            args["dataset"], backbone_name, init_cls, args["increment"], args["seed"]
+        ),
     )
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(filename)s] => %(message)s",
+        force=True,
         handlers=[
             logging.FileHandler(filename=logfilename + ".log"),
             logging.StreamHandler(sys.stdout),
@@ -408,6 +419,11 @@ def _train(args):
 
     args["nb_classes"] = data_manager.nb_classes
     args["nb_tasks"] = data_manager.nb_tasks
+    simplecil_baseline_acc = compute_simplecil_baseline(args, data_manager)
+    logging.info(
+        "Configuration-matched SimpleCIL FWT baseline: %s",
+        simplecil_baseline_acc.tolist(),
+    )
     model = factory.get_model(args["model_name"], args)
 
     cnn_curve = {"top1": [], "top5": []}
@@ -481,9 +497,14 @@ def _train(args):
 
         model.after_task()
 
-        cnn_keys = [key for key in cnn_accy["grouped"].keys() if "-" in key]
-        cnn_values = [cnn_accy["grouped"][key] for key in cnn_keys]
-        cnn_matrix.append(cnn_values)
+        cnn_matrix.append(
+            task_accuracy_row(
+                cnn_accy["grouped"],
+                args["init_cls"],
+                args["increment"],
+                data_manager.nb_tasks,
+            )
+        )
 
         logging.info("CNN: {}".format(cnn_accy["grouped"]))
 
@@ -513,8 +534,12 @@ def _train(args):
         )
     )
     print("PD: {:.2f}".format(cnn_curve["top1"][0] - cnn_curve["top1"][-1]))
-    print("Backward Transfer (BWT):", backward_transfer(np.array(cnn_matrix)))
-    print("Forward Transfer (FWT):", forward_transfer(args["dataset"], np.array(cnn_matrix)))
+    cnn_matrix_array = np.asarray(cnn_matrix, dtype=float)
+    print("Backward Transfer (BWT):", backward_transfer(cnn_matrix_array))
+    print(
+        "Forward Transfer (FWT, SimpleCIL baseline):",
+        forward_transfer_or_unavailable(cnn_matrix_array, simplecil_baseline_acc),
+    )
     print("Total Train Time:", round(total_train_time, 2), "s")
     print("Total Inference Time:", round(total_test_time, 4), "s")
     print("Total Prompt Time:", round(total_prompt_time, 4), "s")
@@ -577,32 +602,3 @@ def Harmonic_Accuracy(grouped_acc, init_cls):
     else:
         hacc = None
     return hacc, old_acc, new_acc
-
-
-def backward_transfer(matrix):
-    last_row_accs = matrix[-1, :-1]
-    diagonal_accs = np.diag(matrix)[:-1]
-    bwt_diffs = last_row_accs - diagonal_accs
-    backward_transfer_value = np.mean(bwt_diffs)
-    return np.round(backward_transfer_value, 2)
-
-
-def forward_transfer(dataset, matrix):
-    if dataset == "cub":
-        rand_init_acc = np.array([86.51, 52.53, 65.04, 67.86, 74.62, 57.89, 71.82, 87.97, 68.6, 83.61, 85.37])
-    elif dataset == "cifar224":
-        rand_init_acc = np.array([77.5, 44.4, 51.8, 30.4, 56.8, 68.4, 44.0, 36.4, 41.4])
-    elif dataset == "mini_imagenet":
-        rand_init_acc = np.array([94.97, 90.6, 69.2, 81.2, 82.8, 73.4, 70.2, 90.6, 89.8])
-    else:
-        rand_init_acc = np.array([62.95, 28.08, 51.15, 38.64, 56.76, 50.93, 41.38, 61.25, 49.1, 43.37, 44.44])
-
-    fwt_accs = np.diag(matrix, k=1)
-    rand_init_acc_for_fwt = rand_init_acc[1:]
-
-    if fwt_accs.shape[0] != rand_init_acc_for_fwt.shape[0]:
-        return "FWT calculation failed: matrix length does not match."
-
-    fwt_diffs = fwt_accs - rand_init_acc_for_fwt
-    forward_transfer_value = np.mean(fwt_diffs)
-    return np.round(forward_transfer_value, 2)

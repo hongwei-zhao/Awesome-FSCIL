@@ -1,0 +1,412 @@
+2026-08-14 13:17:36,109 [trainer.py] => config: configs/IN1K-Shuffle1993/sdlora_mini_B60_Inc5.json
+2026-08-14 13:17:36,110 [trainer.py] => seed: 1993
+2026-08-14 13:17:36,110 [trainer.py] => prefix: reproduce
+2026-08-14 13:17:36,111 [trainer.py] => dataset: mini_imagenet
+2026-08-14 13:17:36,111 [trainer.py] => memory_size: 0
+2026-08-14 13:17:36,111 [trainer.py] => memory_per_class: 0
+2026-08-14 13:17:36,111 [trainer.py] => fixed_memory: False
+2026-08-14 13:17:36,111 [trainer.py] => shuffle: True
+2026-08-14 13:17:36,111 [trainer.py] => init_cls: 60
+2026-08-14 13:17:36,111 [trainer.py] => increment: 5
+2026-08-14 13:17:36,111 [trainer.py] => model_name: sdlora
+2026-08-14 13:17:36,111 [trainer.py] => backbone_type: vit_base_patch16_224
+2026-08-14 13:17:36,112 [trainer.py] => device: [device(type='cuda', index=0)]
+2026-08-14 13:17:36,112 [trainer.py] => scheduler: cosine
+2026-08-14 13:17:36,112 [trainer.py] => min_lr: 0.005
+2026-08-14 13:17:36,112 [trainer.py] => tuned_epoch: 10
+2026-08-14 13:17:36,112 [trainer.py] => filepath: /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+2026-08-14 13:17:36,112 [trainer.py] => init_epoch: 20
+2026-08-14 13:17:36,112 [trainer.py] => init_lr: 0.008
+2026-08-14 13:17:36,112 [trainer.py] => init_milestones: [60, 120, 170]
+2026-08-14 13:17:36,112 [trainer.py] => init_lr_decay: 0.1
+2026-08-14 13:17:36,113 [trainer.py] => init_weight_decay: 0.0001
+2026-08-14 13:17:36,113 [trainer.py] => epochs: 10
+2026-08-14 13:17:36,113 [trainer.py] => lrate: 0.008
+2026-08-14 13:17:36,113 [trainer.py] => milestones: [40, 70]
+2026-08-14 13:17:36,113 [trainer.py] => lrate_decay: 0
+2026-08-14 13:17:36,113 [trainer.py] => batch_size: 128
+2026-08-14 13:17:36,113 [trainer.py] => weight_decay: 0.0002
+2026-08-14 13:17:36,113 [trainer.py] => kshot: 5
+2026-08-14 13:17:36,264 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+!!!!!!! multiple_gpus [device(type='cuda', index=0)]
+This is for the BaseNet initialization.
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+Initialize task-id and curtask id
+After BaseNet initialization.
+task 0
+2026-08-14 13:17:40,671 [sdlora.py] => Learning on 0-60
+
+  0%|          | 0/20 [00:00<?, ?it/s]
+Task 0, Epoch 1/20 => Loss 1.024, Train_accy 81.39, Test_accy 96.85:   0%|          | 0/20 [04:46<?, ?it/s]
+Task 0, Epoch 1/20 => Loss 1.024, Train_accy 81.39, Test_accy 96.85:   5%|▌         | 1/20 [04:46<1:30:39, 286.30s/it]
+Task 0, Epoch 2/20 => Loss 0.443, Train_accy 90.03:   5%|▌         | 1/20 [08:54<1:30:39, 286.30s/it]                 
+Task 0, Epoch 2/20 => Loss 0.443, Train_accy 90.03:  10%|█         | 2/20 [08:54<1:19:13, 264.07s/it]
+Task 0, Epoch 3/20 => Loss 0.290, Train_accy 91.79:  10%|█         | 2/20 [13:05<1:19:13, 264.07s/it]
+Task 0, Epoch 3/20 => Loss 0.290, Train_accy 91.79:  15%|█▌        | 3/20 [13:05<1:13:06, 258.04s/it]
+Task 0, Epoch 4/20 => Loss 0.244, Train_accy 93.05:  15%|█▌        | 3/20 [17:23<1:13:06, 258.04s/it]
+Task 0, Epoch 4/20 => Loss 0.244, Train_accy 93.05:  20%|██        | 4/20 [17:23<1:08:47, 257.98s/it]
+Task 0, Epoch 5/20 => Loss 0.237, Train_accy 93.11:  20%|██        | 4/20 [21:27<1:08:47, 257.98s/it]
+Task 0, Epoch 5/20 => Loss 0.237, Train_accy 93.11:  25%|██▌       | 5/20 [21:27<1:03:15, 253.02s/it]
+Task 0, Epoch 6/20 => Loss 0.224, Train_accy 93.43, Test_accy 97.88:  25%|██▌       | 5/20 [26:09<1:03:15, 253.02s/it]
+Task 0, Epoch 6/20 => Loss 0.224, Train_accy 93.43, Test_accy 97.88:  30%|███       | 6/20 [26:09<1:01:18, 262.76s/it]
+Task 0, Epoch 7/20 => Loss 0.218, Train_accy 93.61:  30%|███       | 6/20 [30:31<1:01:18, 262.76s/it]                 
+Task 0, Epoch 7/20 => Loss 0.218, Train_accy 93.61:  35%|███▌      | 7/20 [30:31<56:53, 262.59s/it]  
+Task 0, Epoch 8/20 => Loss 0.220, Train_accy 93.58:  35%|███▌      | 7/20 [34:39<56:53, 262.59s/it]
+Task 0, Epoch 8/20 => Loss 0.220, Train_accy 93.58:  40%|████      | 8/20 [34:39<51:33, 257.75s/it]
+Task 0, Epoch 9/20 => Loss 0.201, Train_accy 94.18:  40%|████      | 8/20 [38:52<51:33, 257.75s/it]
+Task 0, Epoch 9/20 => Loss 0.201, Train_accy 94.18:  45%|████▌     | 9/20 [38:52<46:59, 256.28s/it]
+Task 0, Epoch 10/20 => Loss 0.205, Train_accy 94.02:  45%|████▌     | 9/20 [43:11<46:59, 256.28s/it]
+Task 0, Epoch 10/20 => Loss 0.205, Train_accy 94.02:  50%|█████     | 10/20 [43:11<42:52, 257.28s/it]
+Task 0, Epoch 11/20 => Loss 0.198, Train_accy 94.24, Test_accy 97.78:  50%|█████     | 10/20 [47:41<42:52, 257.28s/it]
+Task 0, Epoch 11/20 => Loss 0.198, Train_accy 94.24, Test_accy 97.78:  55%|█████▌    | 11/20 [47:41<39:08, 260.98s/it]
+Task 0, Epoch 12/20 => Loss 0.190, Train_accy 94.24:  55%|█████▌    | 11/20 [52:00<39:08, 260.98s/it]                 
+Task 0, Epoch 12/20 => Loss 0.190, Train_accy 94.24:  60%|██████    | 12/20 [52:00<34:43, 260.42s/it]
+Task 0, Epoch 13/20 => Loss 0.186, Train_accy 94.58:  60%|██████    | 12/20 [56:13<34:43, 260.42s/it]
+Task 0, Epoch 13/20 => Loss 0.186, Train_accy 94.58:  65%|██████▌   | 13/20 [56:13<30:07, 258.17s/it]
+Task 0, Epoch 14/20 => Loss 0.179, Train_accy 94.59:  65%|██████▌   | 13/20 [1:00:19<30:07, 258.17s/it]
+Task 0, Epoch 14/20 => Loss 0.179, Train_accy 94.59:  70%|███████   | 14/20 [1:00:19<25:27, 254.57s/it]
+Task 0, Epoch 15/20 => Loss 0.179, Train_accy 94.68:  70%|███████   | 14/20 [1:04:39<25:27, 254.57s/it]
+Task 0, Epoch 15/20 => Loss 0.179, Train_accy 94.68:  75%|███████▌  | 15/20 [1:04:39<21:21, 256.23s/it]
+Task 0, Epoch 16/20 => Loss 0.176, Train_accy 94.85, Test_accy 97.73:  75%|███████▌  | 15/20 [1:09:14<21:21, 256.23s/it]
+Task 0, Epoch 16/20 => Loss 0.176, Train_accy 94.85, Test_accy 97.73:  80%|████████  | 16/20 [1:09:14<17:27, 261.88s/it]
+Task 0, Epoch 17/20 => Loss 0.182, Train_accy 94.51:  80%|████████  | 16/20 [1:13:22<17:27, 261.88s/it]                 
+Task 0, Epoch 17/20 => Loss 0.182, Train_accy 94.51:  85%|████████▌ | 17/20 [1:13:22<12:53, 257.83s/it]
+Task 0, Epoch 18/20 => Loss 0.174, Train_accy 94.79:  85%|████████▌ | 17/20 [1:17:43<12:53, 257.83s/it]
+Task 0, Epoch 18/20 => Loss 0.174, Train_accy 94.79:  90%|█████████ | 18/20 [1:17:43<08:37, 258.65s/it]
+Task 0, Epoch 19/20 => Loss 0.174, Train_accy 94.73:  90%|█████████ | 18/20 [1:21:46<08:37, 258.65s/it]
+Task 0, Epoch 19/20 => Loss 0.174, Train_accy 94.73:  95%|█████████▌| 19/20 [1:21:46<04:13, 253.97s/it]
+Task 0, Epoch 20/20 => Loss 0.172, Train_accy 94.98:  95%|█████████▌| 19/20 [1:25:59<04:13, 253.97s/it]
+Task 0, Epoch 20/20 => Loss 0.172, Train_accy 94.98: 100%|██████████| 20/20 [1:25:59<00:00, 253.56s/it]
+Task 0, Epoch 20/20 => Loss 0.172, Train_accy 94.98: 100%|██████████| 20/20 [1:25:59<00:00, 257.95s/it]
+2026-08-14 14:43:40,170 [sdlora.py] => Task 0, Epoch 20/20 => Loss 0.172, Train_accy 94.98
+2026-08-14 14:44:24,965 [trainer.py] => Task 0 metrics => trainable 0.41M, inference added 0.41M, train GPU 14754.57MiB, infer GPU 1721.39MiB
+2026-08-14 14:44:24,965 [trainer.py] => CNN: {'total': 97.98, '00-59': 97.98, '60-64': 93.8, '65-69': 98.6, '70-74': 97.2, '75-79': 98.4, '80-84': 95.2, '85-89': 99.4, '90-94': 97.4, '95-99': 99.2, 'old': 0, 'new': 97.98}
+2026-08-14 14:44:24,966 [trainer.py] => CNN top1 curve: [97.98]
+2026-08-14 14:44:24,966 [trainer.py] => Average Accuracy (CNN): 97.98 
+
+task 1
+2026-08-14 14:44:24,995 [sdlora.py] => Learning on 60-65
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 1, Epoch 1/10 => Loss 4.536, Train_accy 0.00, Test_accy 89.57:   0%|          | 0/10 [00:28<?, ?it/s]
+Task 1, Epoch 1/10 => Loss 4.536, Train_accy 0.00, Test_accy 89.57:  10%|█         | 1/10 [00:28<04:15, 28.39s/it]
+Task 1, Epoch 2/10 => Loss 1.133, Train_accy 0.00:  10%|█         | 1/10 [00:29<04:15, 28.39s/it]                 
+Task 1, Epoch 2/10 => Loss 1.133, Train_accy 0.00:  20%|██        | 2/10 [00:29<01:37, 12.13s/it]
+Task 1, Epoch 3/10 => Loss 1.137, Train_accy 8.00:  20%|██        | 2/10 [00:29<01:37, 12.13s/it]
+Task 1, Epoch 3/10 => Loss 1.137, Train_accy 8.00:  30%|███       | 3/10 [00:29<00:48,  6.92s/it]
+Task 1, Epoch 4/10 => Loss 0.203, Train_accy 36.00:  30%|███       | 3/10 [00:30<00:48,  6.92s/it]
+Task 1, Epoch 4/10 => Loss 0.203, Train_accy 36.00:  40%|████      | 4/10 [00:30<00:26,  4.50s/it]
+Task 1, Epoch 5/10 => Loss 0.022, Train_accy 56.00:  40%|████      | 4/10 [00:31<00:26,  4.50s/it]
+Task 1, Epoch 5/10 => Loss 0.022, Train_accy 56.00:  50%|█████     | 5/10 [00:31<00:15,  3.16s/it]
+Task 1, Epoch 6/10 => Loss 0.009, Train_accy 56.00, Test_accy 94.25:  50%|█████     | 5/10 [01:00<00:15,  3.16s/it]
+Task 1, Epoch 6/10 => Loss 0.009, Train_accy 56.00, Test_accy 94.25:  60%|██████    | 6/10 [01:00<00:47, 11.87s/it]
+Task 1, Epoch 7/10 => Loss 0.081, Train_accy 64.00:  60%|██████    | 6/10 [01:01<00:47, 11.87s/it]                 
+Task 1, Epoch 7/10 => Loss 0.081, Train_accy 64.00:  70%|███████   | 7/10 [01:01<00:24,  8.27s/it]
+Task 1, Epoch 8/10 => Loss 0.048, Train_accy 72.00:  70%|███████   | 7/10 [01:01<00:24,  8.27s/it]
+Task 1, Epoch 8/10 => Loss 0.048, Train_accy 72.00:  80%|████████  | 8/10 [01:01<00:11,  5.90s/it]
+Task 1, Epoch 9/10 => Loss 0.319, Train_accy 80.00:  80%|████████  | 8/10 [01:02<00:11,  5.90s/it]
+Task 1, Epoch 9/10 => Loss 0.319, Train_accy 80.00:  90%|█████████ | 9/10 [01:02<00:04,  4.30s/it]
+Task 1, Epoch 10/10 => Loss 0.490, Train_accy 72.00:  90%|█████████ | 9/10 [01:03<00:04,  4.30s/it]
+Task 1, Epoch 10/10 => Loss 0.490, Train_accy 72.00: 100%|██████████| 10/10 [01:03<00:00,  3.21s/it]
+Task 1, Epoch 10/10 => Loss 0.490, Train_accy 72.00: 100%|██████████| 10/10 [01:03<00:00,  6.34s/it]
+2026-08-14 14:45:30,504 [sdlora.py] => Task 1, Epoch 10/10 => Loss 0.490, Train_accy 72.00
+2026-08-14 14:46:16,549 [trainer.py] => Task 1 metrics => trainable 0.42M, inference added 0.79M, train GPU 3784.01MiB, infer GPU 1724.43MiB
+2026-08-14 14:46:16,550 [trainer.py] => CNN: {'total': 94.94, '00-59': 95.45, '60-64': 88.8, '65-69': 97.2, '70-74': 98.2, '75-79': 96.8, '80-84': 96.0, '85-89': 99.2, '90-94': 97.0, '95-99': 99.0, 'old': 95.45, 'new': 88.8}
+2026-08-14 14:46:16,550 [trainer.py] => CNN top1 curve: [97.98, 94.94]
+2026-08-14 14:46:16,550 [trainer.py] => Average Accuracy (CNN): 96.46 
+
+task 2
+2026-08-14 14:46:16,566 [sdlora.py] => Learning on 65-70
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 2, Epoch 1/10 => Loss 1.784, Train_accy 0.00, Test_accy 87.80:   0%|          | 0/10 [00:31<?, ?it/s]
+Task 2, Epoch 1/10 => Loss 1.784, Train_accy 0.00, Test_accy 87.80:  10%|█         | 1/10 [00:31<04:43, 31.49s/it]
+Task 2, Epoch 2/10 => Loss 1.082, Train_accy 0.00:  10%|█         | 1/10 [00:32<04:43, 31.49s/it]                 
+Task 2, Epoch 2/10 => Loss 1.082, Train_accy 0.00:  20%|██        | 2/10 [00:32<01:50, 13.75s/it]
+Task 2, Epoch 3/10 => Loss 0.244, Train_accy 0.00:  20%|██        | 2/10 [00:33<01:50, 13.75s/it]
+Task 2, Epoch 3/10 => Loss 0.244, Train_accy 0.00:  30%|███       | 3/10 [00:33<00:55,  7.90s/it]
+Task 2, Epoch 4/10 => Loss 0.174, Train_accy 8.00:  30%|███       | 3/10 [00:34<00:55,  7.90s/it]
+Task 2, Epoch 4/10 => Loss 0.174, Train_accy 8.00:  40%|████      | 4/10 [00:34<00:30,  5.11s/it]
+Task 2, Epoch 5/10 => Loss 0.027, Train_accy 24.00:  40%|████      | 4/10 [00:35<00:30,  5.11s/it]
+Task 2, Epoch 5/10 => Loss 0.027, Train_accy 24.00:  50%|█████     | 5/10 [00:35<00:17,  3.59s/it]
+Task 2, Epoch 6/10 => Loss 0.045, Train_accy 36.00, Test_accy 91.63:  50%|█████     | 5/10 [01:06<00:17,  3.59s/it]
+Task 2, Epoch 6/10 => Loss 0.045, Train_accy 36.00, Test_accy 91.63:  60%|██████    | 6/10 [01:06<00:51, 12.92s/it]
+Task 2, Epoch 7/10 => Loss 0.060, Train_accy 36.00:  60%|██████    | 6/10 [01:07<00:51, 12.92s/it]                 
+Task 2, Epoch 7/10 => Loss 0.060, Train_accy 36.00:  70%|███████   | 7/10 [01:07<00:27,  9.00s/it]
+Task 2, Epoch 8/10 => Loss 0.000, Train_accy 64.00:  70%|███████   | 7/10 [01:08<00:27,  9.00s/it]
+Task 2, Epoch 8/10 => Loss 0.000, Train_accy 64.00:  80%|████████  | 8/10 [01:08<00:12,  6.44s/it]
+Task 2, Epoch 9/10 => Loss 0.398, Train_accy 60.00:  80%|████████  | 8/10 [01:09<00:12,  6.44s/it]
+Task 2, Epoch 9/10 => Loss 0.398, Train_accy 60.00:  90%|█████████ | 9/10 [01:09<00:04,  4.72s/it]
+Task 2, Epoch 10/10 => Loss 0.801, Train_accy 48.00:  90%|█████████ | 9/10 [01:10<00:04,  4.72s/it]
+Task 2, Epoch 10/10 => Loss 0.801, Train_accy 48.00: 100%|██████████| 10/10 [01:10<00:00,  3.52s/it]
+Task 2, Epoch 10/10 => Loss 0.801, Train_accy 48.00: 100%|██████████| 10/10 [01:10<00:00,  7.02s/it]
+2026-08-14 14:47:30,568 [sdlora.py] => Task 2, Epoch 10/10 => Loss 0.801, Train_accy 48.00
+2026-08-14 14:48:15,106 [trainer.py] => Task 2 metrics => trainable 0.42M, inference added 1.16M, train GPU 4132.76MiB, infer GPU 1725.86MiB
+2026-08-14 14:48:15,106 [trainer.py] => CNN: {'total': 93.01, '00-59': 94.78, '60-64': 88.6, '65-69': 76.2, '70-74': 98.2, '75-79': 96.8, '80-84': 96.0, '85-89': 99.4, '90-94': 96.4, '95-99': 99.0, 'old': 94.31, 'new': 76.2}
+2026-08-14 14:48:15,106 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01]
+2026-08-14 14:48:15,106 [trainer.py] => Average Accuracy (CNN): 95.31 
+
+task 3
+2026-08-14 14:48:15,122 [sdlora.py] => Learning on 70-75
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 3, Epoch 1/10 => Loss 4.191, Train_accy 0.00, Test_accy 86.88:   0%|          | 0/10 [00:33<?, ?it/s]
+Task 3, Epoch 1/10 => Loss 4.191, Train_accy 0.00, Test_accy 86.88:  10%|█         | 1/10 [00:33<05:03, 33.73s/it]
+Task 3, Epoch 2/10 => Loss 1.231, Train_accy 0.00:  10%|█         | 1/10 [00:34<05:03, 33.73s/it]                 
+Task 3, Epoch 2/10 => Loss 1.231, Train_accy 0.00:  20%|██        | 2/10 [00:34<01:55, 14.42s/it]
+Task 3, Epoch 3/10 => Loss 0.216, Train_accy 0.00:  20%|██        | 2/10 [00:35<01:55, 14.42s/it]
+Task 3, Epoch 3/10 => Loss 0.216, Train_accy 0.00:  30%|███       | 3/10 [00:35<00:57,  8.24s/it]
+Task 3, Epoch 4/10 => Loss 0.049, Train_accy 12.00:  30%|███       | 3/10 [00:36<00:57,  8.24s/it]
+Task 3, Epoch 4/10 => Loss 0.049, Train_accy 12.00:  40%|████      | 4/10 [00:36<00:32,  5.34s/it]
+Task 3, Epoch 5/10 => Loss 0.140, Train_accy 20.00:  40%|████      | 4/10 [00:37<00:32,  5.34s/it]
+Task 3, Epoch 5/10 => Loss 0.140, Train_accy 20.00:  50%|█████     | 5/10 [00:37<00:18,  3.73s/it]
+Task 3, Epoch 6/10 => Loss 0.513, Train_accy 44.00, Test_accy 90.32:  50%|█████     | 5/10 [01:10<00:18,  3.73s/it]
+Task 3, Epoch 6/10 => Loss 0.513, Train_accy 44.00, Test_accy 90.32:  60%|██████    | 6/10 [01:10<00:54, 13.73s/it]
+Task 3, Epoch 7/10 => Loss 0.395, Train_accy 56.00:  60%|██████    | 6/10 [01:11<00:54, 13.73s/it]                 
+Task 3, Epoch 7/10 => Loss 0.395, Train_accy 56.00:  70%|███████   | 7/10 [01:11<00:28,  9.55s/it]
+Task 3, Epoch 8/10 => Loss 0.190, Train_accy 64.00:  70%|███████   | 7/10 [01:12<00:28,  9.55s/it]
+Task 3, Epoch 8/10 => Loss 0.190, Train_accy 64.00:  80%|████████  | 8/10 [01:12<00:13,  6.79s/it]
+Task 3, Epoch 9/10 => Loss 0.182, Train_accy 72.00:  80%|████████  | 8/10 [01:13<00:13,  6.79s/it]
+Task 3, Epoch 9/10 => Loss 0.182, Train_accy 72.00:  90%|█████████ | 9/10 [01:13<00:04,  4.95s/it]
+Task 3, Epoch 10/10 => Loss 0.035, Train_accy 88.00:  90%|█████████ | 9/10 [01:14<00:04,  4.95s/it]
+Task 3, Epoch 10/10 => Loss 0.035, Train_accy 88.00: 100%|██████████| 10/10 [01:14<00:00,  3.72s/it]
+Task 3, Epoch 10/10 => Loss 0.035, Train_accy 88.00: 100%|██████████| 10/10 [01:14<00:00,  7.41s/it]
+2026-08-14 14:49:31,377 [sdlora.py] => Task 3, Epoch 10/10 => Loss 0.035, Train_accy 88.00
+2026-08-14 14:50:16,885 [trainer.py] => Task 3 metrics => trainable 0.43M, inference added 1.53M, train GPU 4481.23MiB, infer GPU 1727.30MiB
+2026-08-14 14:50:16,885 [trainer.py] => CNN: {'total': 91.32, '00-59': 93.35, '60-64': 83.0, '65-69': 76.6, '70-74': 90.0, '75-79': 96.8, '80-84': 96.0, '85-89': 99.6, '90-94': 96.4, '95-99': 99.0, 'old': 91.41, 'new': 90.0}
+2026-08-14 14:50:16,885 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01, 91.32]
+2026-08-14 14:50:16,885 [trainer.py] => Average Accuracy (CNN): 94.31 
+
+task 4
+2026-08-14 14:50:16,900 [sdlora.py] => Learning on 75-80
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 4, Epoch 1/10 => Loss 3.958, Train_accy 0.00, Test_accy 85.42:   0%|          | 0/10 [00:36<?, ?it/s]
+Task 4, Epoch 1/10 => Loss 3.958, Train_accy 0.00, Test_accy 85.42:  10%|█         | 1/10 [00:36<05:25, 36.14s/it]
+Task 4, Epoch 2/10 => Loss 0.850, Train_accy 0.00:  10%|█         | 1/10 [00:37<05:25, 36.14s/it]                 
+Task 4, Epoch 2/10 => Loss 0.850, Train_accy 0.00:  20%|██        | 2/10 [00:37<02:04, 15.50s/it]
+Task 4, Epoch 3/10 => Loss 0.185, Train_accy 0.00:  20%|██        | 2/10 [00:38<02:04, 15.50s/it]
+Task 4, Epoch 3/10 => Loss 0.185, Train_accy 0.00:  30%|███       | 3/10 [00:38<01:01,  8.82s/it]
+Task 4, Epoch 4/10 => Loss 0.328, Train_accy 8.00:  30%|███       | 3/10 [00:38<01:01,  8.82s/it]
+Task 4, Epoch 4/10 => Loss 0.328, Train_accy 8.00:  40%|████      | 4/10 [00:38<00:34,  5.69s/it]
+Task 4, Epoch 5/10 => Loss 0.035, Train_accy 16.00:  40%|████      | 4/10 [00:39<00:34,  5.69s/it]
+Task 4, Epoch 5/10 => Loss 0.035, Train_accy 16.00:  50%|█████     | 5/10 [00:39<00:19,  3.97s/it]
+Task 4, Epoch 6/10 => Loss 0.081, Train_accy 36.00, Test_accy 89.44:  50%|█████     | 5/10 [01:16<00:19,  3.97s/it]
+Task 4, Epoch 6/10 => Loss 0.081, Train_accy 36.00, Test_accy 89.44:  60%|██████    | 6/10 [01:16<01:00, 15.04s/it]
+Task 4, Epoch 7/10 => Loss 0.001, Train_accy 44.00:  60%|██████    | 6/10 [01:17<01:00, 15.04s/it]                 
+Task 4, Epoch 7/10 => Loss 0.001, Train_accy 44.00:  70%|███████   | 7/10 [01:17<00:31, 10.41s/it]
+Task 4, Epoch 8/10 => Loss 0.188, Train_accy 68.00:  70%|███████   | 7/10 [01:18<00:31, 10.41s/it]
+Task 4, Epoch 8/10 => Loss 0.188, Train_accy 68.00:  80%|████████  | 8/10 [01:18<00:14,  7.39s/it]
+Task 4, Epoch 9/10 => Loss 0.000, Train_accy 88.00:  80%|████████  | 8/10 [01:19<00:14,  7.39s/it]
+Task 4, Epoch 9/10 => Loss 0.000, Train_accy 88.00:  90%|█████████ | 9/10 [01:19<00:05,  5.36s/it]
+Task 4, Epoch 10/10 => Loss 0.034, Train_accy 72.00:  90%|█████████ | 9/10 [01:19<00:05,  5.36s/it]
+Task 4, Epoch 10/10 => Loss 0.034, Train_accy 72.00: 100%|██████████| 10/10 [01:19<00:00,  3.98s/it]
+Task 4, Epoch 10/10 => Loss 0.034, Train_accy 72.00: 100%|██████████| 10/10 [01:19<00:00,  8.00s/it]
+2026-08-14 14:51:39,158 [sdlora.py] => Task 4, Epoch 10/10 => Loss 0.034, Train_accy 72.00
+2026-08-14 14:52:25,280 [trainer.py] => Task 4 metrics => trainable 0.43M, inference added 1.90M, train GPU 4829.69MiB, infer GPU 1728.73MiB
+2026-08-14 14:52:25,280 [trainer.py] => CNN: {'total': 90.59, '00-59': 92.93, '60-64': 81.8, '65-69': 74.8, '70-74': 90.4, '75-79': 87.2, '80-84': 95.8, '85-89': 99.2, '90-94': 97.0, '95-99': 99.0, 'old': 90.81, 'new': 87.2}
+2026-08-14 14:52:25,280 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01, 91.32, 90.59]
+2026-08-14 14:52:25,281 [trainer.py] => Average Accuracy (CNN): 93.57 
+
+task 5
+2026-08-14 14:52:25,294 [sdlora.py] => Learning on 80-85
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 5, Epoch 1/10 => Loss 3.325, Train_accy 0.00, Test_accy 85.13:   0%|          | 0/10 [00:39<?, ?it/s]
+Task 5, Epoch 1/10 => Loss 3.325, Train_accy 0.00, Test_accy 85.13:  10%|█         | 1/10 [00:39<05:58, 39.81s/it]
+Task 5, Epoch 2/10 => Loss 0.960, Train_accy 0.00:  10%|█         | 1/10 [00:40<05:58, 39.81s/it]                 
+Task 5, Epoch 2/10 => Loss 0.960, Train_accy 0.00:  20%|██        | 2/10 [00:40<02:15, 16.92s/it]
+Task 5, Epoch 3/10 => Loss 0.196, Train_accy 4.00:  20%|██        | 2/10 [00:41<02:15, 16.92s/it]
+Task 5, Epoch 3/10 => Loss 0.196, Train_accy 4.00:  30%|███       | 3/10 [00:41<01:07,  9.58s/it]
+Task 5, Epoch 4/10 => Loss 0.122, Train_accy 12.00:  30%|███       | 3/10 [00:42<01:07,  9.58s/it]
+Task 5, Epoch 4/10 => Loss 0.122, Train_accy 12.00:  40%|████      | 4/10 [00:42<00:36,  6.14s/it]
+Task 5, Epoch 5/10 => Loss 0.024, Train_accy 20.00:  40%|████      | 4/10 [00:43<00:36,  6.14s/it]
+Task 5, Epoch 5/10 => Loss 0.024, Train_accy 20.00:  50%|█████     | 5/10 [00:43<00:21,  4.23s/it]
+Task 5, Epoch 6/10 => Loss 0.008, Train_accy 36.00, Test_accy 88.11:  50%|█████     | 5/10 [01:24<00:21,  4.23s/it]
+Task 5, Epoch 6/10 => Loss 0.008, Train_accy 36.00, Test_accy 88.11:  60%|██████    | 6/10 [01:24<01:06, 16.74s/it]
+Task 5, Epoch 7/10 => Loss 0.041, Train_accy 48.00:  60%|██████    | 6/10 [01:25<01:06, 16.74s/it]                 
+Task 5, Epoch 7/10 => Loss 0.041, Train_accy 48.00:  70%|███████   | 7/10 [01:25<00:34, 11.55s/it]
+Task 5, Epoch 8/10 => Loss 0.070, Train_accy 48.00:  70%|███████   | 7/10 [01:26<00:34, 11.55s/it]
+Task 5, Epoch 8/10 => Loss 0.070, Train_accy 48.00:  80%|████████  | 8/10 [01:26<00:16,  8.16s/it]
+Task 5, Epoch 9/10 => Loss 0.190, Train_accy 52.00:  80%|████████  | 8/10 [01:26<00:16,  8.16s/it]
+Task 5, Epoch 9/10 => Loss 0.190, Train_accy 52.00:  90%|█████████ | 9/10 [01:26<00:05,  5.88s/it]
+Task 5, Epoch 10/10 => Loss 0.211, Train_accy 52.00:  90%|█████████ | 9/10 [01:27<00:05,  5.88s/it]
+Task 5, Epoch 10/10 => Loss 0.211, Train_accy 52.00: 100%|██████████| 10/10 [01:27<00:00,  4.33s/it]
+Task 5, Epoch 10/10 => Loss 0.211, Train_accy 52.00: 100%|██████████| 10/10 [01:27<00:00,  8.78s/it]
+2026-08-14 14:53:54,775 [sdlora.py] => Task 5, Epoch 10/10 => Loss 0.211, Train_accy 52.00
+2026-08-14 14:54:45,185 [trainer.py] => Task 5 metrics => trainable 0.43M, inference added 2.28M, train GPU 5178.16MiB, infer GPU 1730.17MiB
+2026-08-14 14:54:45,186 [trainer.py] => CNN: {'total': 89.33, '00-59': 92.25, '60-64': 82.4, '65-69': 74.0, '70-74': 90.6, '75-79': 89.0, '80-84': 75.6, '85-89': 99.4, '90-94': 96.6, '95-99': 99.0, 'old': 90.19, 'new': 75.6}
+2026-08-14 14:54:45,186 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01, 91.32, 90.59, 89.33]
+2026-08-14 14:54:45,186 [trainer.py] => Average Accuracy (CNN): 92.86 
+
+task 6
+2026-08-14 14:54:45,201 [sdlora.py] => Learning on 85-90
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 6, Epoch 1/10 => Loss 3.017, Train_accy 0.00, Test_accy 84.30:   0%|          | 0/10 [00:46<?, ?it/s]
+Task 6, Epoch 1/10 => Loss 3.017, Train_accy 0.00, Test_accy 84.30:  10%|█         | 1/10 [00:46<07:00, 46.76s/it]
+Task 6, Epoch 2/10 => Loss 0.249, Train_accy 0.00:  10%|█         | 1/10 [00:47<07:00, 46.76s/it]                 
+Task 6, Epoch 2/10 => Loss 0.249, Train_accy 0.00:  20%|██        | 2/10 [00:47<02:38, 19.76s/it]
+Task 6, Epoch 3/10 => Loss 0.513, Train_accy 4.00:  20%|██        | 2/10 [00:48<02:38, 19.76s/it]
+Task 6, Epoch 3/10 => Loss 0.513, Train_accy 4.00:  30%|███       | 3/10 [00:48<01:18, 11.16s/it]
+Task 6, Epoch 4/10 => Loss 0.014, Train_accy 32.00:  30%|███       | 3/10 [00:49<01:18, 11.16s/it]
+Task 6, Epoch 4/10 => Loss 0.014, Train_accy 32.00:  40%|████      | 4/10 [00:49<00:42,  7.15s/it]
+Task 6, Epoch 5/10 => Loss 0.204, Train_accy 40.00:  40%|████      | 4/10 [00:50<00:42,  7.15s/it]
+Task 6, Epoch 5/10 => Loss 0.204, Train_accy 40.00:  50%|█████     | 5/10 [00:50<00:24,  4.90s/it]
+Task 6, Epoch 6/10 => Loss 0.003, Train_accy 64.00, Test_accy 89.00:  50%|█████     | 5/10 [01:38<00:24,  4.90s/it]
+Task 6, Epoch 6/10 => Loss 0.003, Train_accy 64.00, Test_accy 89.00:  60%|██████    | 6/10 [01:38<01:18, 19.69s/it]
+Task 6, Epoch 7/10 => Loss 0.064, Train_accy 72.00:  60%|██████    | 6/10 [01:39<01:18, 19.69s/it]                 
+Task 6, Epoch 7/10 => Loss 0.064, Train_accy 72.00:  70%|███████   | 7/10 [01:39<00:40, 13.56s/it]
+Task 6, Epoch 8/10 => Loss 0.296, Train_accy 80.00:  70%|███████   | 7/10 [01:40<00:40, 13.56s/it]
+Task 6, Epoch 8/10 => Loss 0.296, Train_accy 80.00:  80%|████████  | 8/10 [01:40<00:19,  9.57s/it]
+Task 6, Epoch 9/10 => Loss 0.276, Train_accy 88.00:  80%|████████  | 8/10 [01:42<00:19,  9.57s/it]
+Task 6, Epoch 9/10 => Loss 0.276, Train_accy 88.00:  90%|█████████ | 9/10 [01:42<00:06,  6.95s/it]
+Task 6, Epoch 10/10 => Loss 0.001, Train_accy 88.00:  90%|█████████ | 9/10 [01:42<00:06,  6.95s/it]
+Task 6, Epoch 10/10 => Loss 0.001, Train_accy 88.00: 100%|██████████| 10/10 [01:42<00:00,  5.08s/it]
+Task 6, Epoch 10/10 => Loss 0.001, Train_accy 88.00: 100%|██████████| 10/10 [01:42<00:00, 10.29s/it]
+2026-08-14 14:56:29,876 [sdlora.py] => Task 6, Epoch 10/10 => Loss 0.001, Train_accy 88.00
+2026-08-14 14:57:25,010 [trainer.py] => Task 6 metrics => trainable 0.44M, inference added 2.65M, train GPU 5526.91MiB, infer GPU 1731.61MiB
+2026-08-14 14:57:25,010 [trainer.py] => CNN: {'total': 89.27, '00-59': 91.7, '60-64': 82.0, '65-69': 73.8, '70-74': 89.6, '75-79': 88.8, '80-84': 77.8, '85-89': 94.4, '90-94': 97.4, '95-99': 99.0, 'old': 88.96, 'new': 94.4}
+2026-08-14 14:57:25,010 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01, 91.32, 90.59, 89.33, 89.27]
+2026-08-14 14:57:25,010 [trainer.py] => Average Accuracy (CNN): 92.35 
+
+task 7
+2026-08-14 14:57:25,026 [sdlora.py] => Learning on 90-95
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 7, Epoch 1/10 => Loss 4.497, Train_accy 0.00, Test_accy 84.64:   0%|          | 0/10 [00:52<?, ?it/s]
+Task 7, Epoch 1/10 => Loss 4.497, Train_accy 0.00, Test_accy 84.64:  10%|█         | 1/10 [00:52<07:55, 52.81s/it]
+Task 7, Epoch 2/10 => Loss 1.083, Train_accy 0.00:  10%|█         | 1/10 [00:53<07:55, 52.81s/it]                 
+Task 7, Epoch 2/10 => Loss 1.083, Train_accy 0.00:  20%|██        | 2/10 [00:53<02:59, 22.39s/it]
+Task 7, Epoch 3/10 => Loss 0.250, Train_accy 0.00:  20%|██        | 2/10 [00:54<02:59, 22.39s/it]
+Task 7, Epoch 3/10 => Loss 0.250, Train_accy 0.00:  30%|███       | 3/10 [00:54<01:28, 12.61s/it]
+Task 7, Epoch 4/10 => Loss 0.015, Train_accy 8.00:  30%|███       | 3/10 [00:55<01:28, 12.61s/it]
+Task 7, Epoch 4/10 => Loss 0.015, Train_accy 8.00:  40%|████      | 4/10 [00:55<00:48,  8.07s/it]
+Task 7, Epoch 5/10 => Loss 0.000, Train_accy 40.00:  40%|████      | 4/10 [00:56<00:48,  8.07s/it]
+Task 7, Epoch 5/10 => Loss 0.000, Train_accy 40.00:  50%|█████     | 5/10 [00:56<00:27,  5.48s/it]
+Task 7, Epoch 6/10 => Loss 0.065, Train_accy 68.00, Test_accy 87.84:  50%|█████     | 5/10 [01:48<00:27,  5.48s/it]
+Task 7, Epoch 6/10 => Loss 0.065, Train_accy 68.00, Test_accy 87.84:  60%|██████    | 6/10 [01:48<01:25, 21.33s/it]
+Task 7, Epoch 7/10 => Loss 0.134, Train_accy 68.00:  60%|██████    | 6/10 [01:50<01:25, 21.33s/it]                 
+Task 7, Epoch 7/10 => Loss 0.134, Train_accy 68.00:  70%|███████   | 7/10 [01:50<00:44, 14.70s/it]
+Task 7, Epoch 8/10 => Loss 0.000, Train_accy 76.00:  70%|███████   | 7/10 [01:51<00:44, 14.70s/it]
+Task 7, Epoch 8/10 => Loss 0.000, Train_accy 76.00:  80%|████████  | 8/10 [01:51<00:20, 10.34s/it]
+Task 7, Epoch 9/10 => Loss 0.000, Train_accy 96.00:  80%|████████  | 8/10 [01:52<00:20, 10.34s/it]
+Task 7, Epoch 9/10 => Loss 0.000, Train_accy 96.00:  90%|█████████ | 9/10 [01:52<00:07,  7.42s/it]
+Task 7, Epoch 10/10 => Loss 0.151, Train_accy 88.00:  90%|█████████ | 9/10 [01:52<00:07,  7.42s/it]
+Task 7, Epoch 10/10 => Loss 0.151, Train_accy 88.00: 100%|██████████| 10/10 [01:52<00:00,  5.42s/it]
+Task 7, Epoch 10/10 => Loss 0.151, Train_accy 88.00: 100%|██████████| 10/10 [01:52<00:00, 11.30s/it]
+2026-08-14 14:59:20,265 [sdlora.py] => Task 7, Epoch 10/10 => Loss 0.151, Train_accy 88.00
+2026-08-14 15:00:14,263 [trainer.py] => Task 7 metrics => trainable 0.44M, inference added 3.02M, train GPU 5875.38MiB, infer GPU 1733.04MiB
+2026-08-14 15:00:14,263 [trainer.py] => CNN: {'total': 88.47, '00-59': 91.75, '60-64': 73.2, '65-69': 74.2, '70-74': 88.8, '75-79': 88.8, '80-84': 77.0, '85-89': 94.8, '90-94': 83.2, '95-99': 99.0, 'old': 88.77, 'new': 83.2}
+2026-08-14 15:00:14,264 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01, 91.32, 90.59, 89.33, 89.27, 88.47]
+2026-08-14 15:00:14,264 [trainer.py] => Average Accuracy (CNN): 91.86 
+
+task 8
+2026-08-14 15:00:14,279 [sdlora.py] => Learning on 95-100
+save_file /home/team/zhaohongwei/Code/Research/Awesome-FSCIL/saved_model/SD-LoRA/IN1K-Shuffle1993/mini/
+
+  0%|          | 0/10 [00:00<?, ?it/s]
+Task 8, Epoch 1/10 => Loss 2.355, Train_accy 0.00, Test_accy 83.89:   0%|          | 0/10 [00:53<?, ?it/s]
+Task 8, Epoch 1/10 => Loss 2.355, Train_accy 0.00, Test_accy 83.89:  10%|█         | 1/10 [00:53<08:01, 53.47s/it]
+Task 8, Epoch 2/10 => Loss 0.906, Train_accy 0.00:  10%|█         | 1/10 [00:54<08:01, 53.47s/it]                 
+Task 8, Epoch 2/10 => Loss 0.906, Train_accy 0.00:  20%|██        | 2/10 [00:54<03:00, 22.60s/it]
+Task 8, Epoch 3/10 => Loss 0.142, Train_accy 0.00:  20%|██        | 2/10 [00:55<03:00, 22.60s/it]
+Task 8, Epoch 3/10 => Loss 0.142, Train_accy 0.00:  30%|███       | 3/10 [00:55<01:29, 12.72s/it]
+Task 8, Epoch 4/10 => Loss 0.002, Train_accy 4.00:  30%|███       | 3/10 [00:56<01:29, 12.72s/it]
+Task 8, Epoch 4/10 => Loss 0.002, Train_accy 4.00:  40%|████      | 4/10 [00:56<00:48,  8.09s/it]
+Task 8, Epoch 5/10 => Loss 0.002, Train_accy 8.00:  40%|████      | 4/10 [00:57<00:48,  8.09s/it]
+Task 8, Epoch 5/10 => Loss 0.002, Train_accy 8.00:  50%|█████     | 5/10 [00:57<00:27,  5.50s/it]
+Task 8, Epoch 6/10 => Loss 0.249, Train_accy 44.00, Test_accy 86.51:  50%|█████     | 5/10 [01:51<00:27,  5.50s/it]
+Task 8, Epoch 6/10 => Loss 0.249, Train_accy 44.00, Test_accy 86.51:  60%|██████    | 6/10 [01:51<01:28, 22.08s/it]
+Task 8, Epoch 7/10 => Loss 0.000, Train_accy 44.00:  60%|██████    | 6/10 [01:52<01:28, 22.08s/it]                 
+Task 8, Epoch 7/10 => Loss 0.000, Train_accy 44.00:  70%|███████   | 7/10 [01:52<00:45, 15.17s/it]
+Task 8, Epoch 8/10 => Loss 0.168, Train_accy 64.00:  70%|███████   | 7/10 [01:53<00:45, 15.17s/it]
+Task 8, Epoch 8/10 => Loss 0.168, Train_accy 64.00:  80%|████████  | 8/10 [01:53<00:21, 10.70s/it]
+Task 8, Epoch 9/10 => Loss 0.031, Train_accy 76.00:  80%|████████  | 8/10 [01:54<00:21, 10.70s/it]
+Task 8, Epoch 9/10 => Loss 0.031, Train_accy 76.00:  90%|█████████ | 9/10 [01:54<00:07,  7.64s/it]
+Task 8, Epoch 10/10 => Loss 0.009, Train_accy 76.00:  90%|█████████ | 9/10 [01:55<00:07,  7.64s/it]
+Task 8, Epoch 10/10 => Loss 0.009, Train_accy 76.00: 100%|██████████| 10/10 [01:55<00:00,  5.56s/it]
+Task 8, Epoch 10/10 => Loss 0.009, Train_accy 76.00: 100%|██████████| 10/10 [01:55<00:00, 11.55s/it]
+2026-08-14 15:02:11,808 [sdlora.py] => Task 8, Epoch 10/10 => Loss 0.009, Train_accy 76.00
+2026-08-14 15:03:03,956 [trainer.py] => Task 8 metrics => trainable 0.45M, inference added 3.39M, train GPU 6223.84MiB, infer GPU 1660.48MiB
+2026-08-14 15:03:03,957 [trainer.py] => CNN: {'total': 88.4, '00-59': 91.52, '60-64': 72.6, '65-69': 74.8, '70-74': 89.6, '75-79': 87.6, '80-84': 76.4, '85-89': 94.4, '90-94': 85.0, '95-99': 89.4, 'old': 88.35, 'new': 89.4}
+2026-08-14 15:03:03,957 [trainer.py] => CNN top1 curve: [97.98, 94.94, 93.01, 91.32, 90.59, 89.33, 89.27, 88.47, 88.4]
+2026-08-14 15:03:03,957 [trainer.py] => Average Accuracy (CNN): 91.48 
+
+
+================================================================================
+Finished mini_imagenet_init60_inc5: vit_base_patch16_224  
+Base Accuracy: 97.98
+Last Accuracy: 88.4
+Average Accuracy (Top1): 91.48
+PD: 9.58
+Backward Transfer (BWT): -2.68
+Forward Transfer (FWT): 16.23
+Total Train Time: 5884.61 s
+Total Inference Time: 437.3309 s
+Total Prompt Time: 0.0 s
+Accuracy Matrix (CNN):
+[[97.98 93.8  98.6  97.2  98.4  95.2  99.4  97.4  99.2 ]
+ [95.45 88.8  97.2  98.2  96.8  96.   99.2  97.   99.  ]
+ [94.78 88.6  76.2  98.2  96.8  96.   99.4  96.4  99.  ]
+ [93.35 83.   76.6  90.   96.8  96.   99.6  96.4  99.  ]
+ [92.93 81.8  74.8  90.4  87.2  95.8  99.2  97.   99.  ]
+ [92.25 82.4  74.   90.6  89.   75.6  99.4  96.6  99.  ]
+ [91.7  82.   73.8  89.6  88.8  77.8  94.4  97.4  99.  ]
+ [91.75 73.2  74.2  88.8  88.8  77.   94.8  83.2  99.  ]
+ [91.52 72.6  74.8  89.6  87.6  76.4  94.4  85.   89.4 ]]
+================================================================================
+
+
+==========================================================================================
+Training Task Metrics
+------------------------------------------------------------------------------------
+Task    Trainable(M)    GPU(MiB)    Time/Task(s)   Epochs  Time/Epoch(s)  
+------------------------------------------------------------------------------------
+S0      0.41            14754.57    5159.51        20      257.98         
+S1      0.42            3784.01     65.52          10      6.55           
+S2      0.42            4132.76     74.01          10      7.40           
+S3      0.43            4481.23     76.27          10      7.63           
+S4      0.43            4829.69     82.28          10      8.23           
+S5      0.43            5178.16     89.50          10      8.95           
+S6      0.44            5526.91     104.70         10      10.47          
+S7      0.44            5875.38     115.27         10      11.53          
+S8      0.45            6223.84     117.55         10      11.76          
+------------------------------------------------------------------------------------
+Base S0 0.41            14754.57    5159.51        20      257.98         
+Inc Avg 0.43            5004.00     90.64          10.00   9.06           
+All Avg 0.43            6087.40     653.85         11.11   36.72          
+Max GPU                 14754.57                                          
+Total                                           5884.61        
+Final   0.45                                                              
+------------------------------------------------------------------------------------------
+Inference Task Metrics
+------------------------------------------------------------------------------------------
+Task    Added(M)    GPU(MiB)    Time/Task(s)   Latency(ms/img)   Samples   Prompt(s)   
+------------------------------------------------------------------------------------------
+S0      0.41        1721.39     44.6725        4.4672            10000     0.0000      
+S1      0.79        1724.43     45.9407        4.5941            10000     0.0000      
+S2      1.16        1725.86     44.4228        4.4423            10000     0.0000      
+S3      1.53        1727.30     45.3621        4.5362            10000     0.0000      
+S4      1.90        1728.73     45.9687        4.5969            10000     0.0000      
+S5      2.28        1730.17     50.2524        5.0252            10000     0.0000      
+S6      2.65        1731.61     54.9631        5.4963            10000     0.0000      
+S7      3.02        1733.04     53.7931        5.3793            10000     0.0000      
+S8      3.39        1660.48     51.9556        4.9482            10500     0.0000      
+------------------------------------------------------------------------------------------
+Base S0 0.41        1721.39     44.6725        4.4672            10000     0.0000      
+Inc Avg 2.09        1720.20     49.0823        4.8773            10062.50  0.0000      
+All Avg 1.90        1720.33     48.5923        4.8317            10055.56  0.0000      
+Max GPU             1733.04                                                            
+Total                           437.3309                                   0.0000      
+Final   3.39        
+==========================================================================================
+
+RERUN_COMPLETE

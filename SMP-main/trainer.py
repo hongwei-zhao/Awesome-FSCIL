@@ -33,7 +33,15 @@ def train(args):
 def _train(args):
 
     init_cls = args["init_cls"]
-    saved_path = "logs/{}/{}/{}_{}_k{}_s{}_{}".format(args["model_name"],args["dataset"], init_cls, args['increment'], args["kshot"], args["seed"], args["tag"])
+    repository_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    saved_path = os.path.join(
+        repository_root,
+        "saved_model",
+        "SMP",
+        args["tag"],
+        "{}_{}_k{}_s{}".format(args["dataset"], init_cls, args["increment"], args["seed"]),
+    )
+    log_dir = os.path.join(repository_root, "logs", args["tag"])
     log_name = 'log'
     if args['special_flag']: # 替换save path
         # ********** previous version
@@ -47,14 +55,25 @@ def _train(args):
         # assert os.path.exists(args['base_model_path']), f"文件不存在: {args['base_model_path']}"
         log_name = 'special_log'
     args["saved_path"] = saved_path
-    logfilename = os.path.join(saved_path,log_name)
+    backbone_name = args["backbone_type"].removeprefix("pretrained_")
+    logfilename = os.path.join(
+        log_dir,
+        "SMP-{}-{}_{}_{}_{}_{}{}".format(
+            args["tag"].replace("Shuffle", "Shuffle-").replace("NoShuffle", "NoShuffle-"),
+            args["dataset"], backbone_name, init_cls, args["increment"], args["seed"],
+            "_special" if args["special_flag"] else "",
+        ),
+    )
 
     if not os.path.exists(saved_path):
         os.makedirs(saved_path)
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
 
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(filename)s] => %(message)s",
+        force=True,
         handlers=[
             logging.FileHandler(filename=logfilename + ".log"),
             logging.StreamHandler(sys.stdout),

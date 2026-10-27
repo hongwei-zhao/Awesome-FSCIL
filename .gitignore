@@ -4,6 +4,7 @@ saved_model/
 .vscode/
 __pycache__/
 *.py[cod]
+*.pid
 *.ipynb
 *.pdf
 configs/常用命令.sh

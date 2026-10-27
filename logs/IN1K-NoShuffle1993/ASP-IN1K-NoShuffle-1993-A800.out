@@ -495,7 +495,7 @@ anchor samples found
 ================================================================================
 Finished mini_imagenet_init60_inc5: pretrained_vit_b16_224_vpt  
 Base Accuracy: 97.03
-Lase Accuracy: 94.43
+Last Accuracy: 94.43
 Average Accuracy (Top1): 95.47
 PD: 2.60
 Backward Transfer (BWT): -0.9
@@ -516,7 +516,7 @@ Accuracy Matrix (CNN):
 2025-08-22 17:12:00,317 [trainer.py] => model_name: asp
 2025-08-22 17:12:00,317 [trainer.py] => backbone_type: pretrained_vit_b16_224_vpt
 2025-08-22 17:12:00,317 [trainer.py] => device: [device(type='cuda', index=3)]
-2025-08-22 17:12:00,317 [trainer.py] => seed: 2025
+2025-08-22 17:12:00,317 [trainer.py] => seed: 1993
 2025-08-22 17:12:00,317 [trainer.py] => dataset: imagenetr
 2025-08-22 17:12:00,317 [trainer.py] => init_cls: 100
 2025-08-22 17:12:00,318 [trainer.py] => increment: 10

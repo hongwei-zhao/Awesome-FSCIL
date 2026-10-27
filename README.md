@@ -15,7 +15,7 @@
 - **Few-Shot Class-Incremental Learning (FSCIL)** studies how models learn new classes from only a few examples while retaining performance on previously learned classes.
 - **This repository collects** FSCIL/CIL baselines and prompt-, adapter-, and LoRA-based methods, along with their code, configurations, run scripts, and reproduced results.
 - **Unified settings** include ImageNet-1K, ImageNet-21K, DINO, and selected ViT-Large initializations. Training and inference metrics are recorded at the task level.
-- **Results** are summarized in [`FSCIL_Results.xlsx`](FSCIL_Results.xlsx). Detailed SMP progress and completed accuracy curves are available in [`SMP-main/EXPERIMENT_STATUS.md`](SMP-main/EXPERIMENT_STATUS.md).
+- **Results** are summarized in [`FSCIL_IN1K_Baselines.xlsx`](FSCIL_IN1K_Baselines.xlsx). Its `Audit` sheet maps each method-setting row to the corresponding file currently retained under `logs/` and marks paper-only comparators without a local log. Detailed SMP curves are available in [`SMP-main/EXPERIMENT_STATUS.md`](SMP-main/EXPERIMENT_STATUS.md).
 
 ---
 
@@ -28,20 +28,18 @@
 - `CODA-Prompt`: *CODA-Prompt: COntinual Decomposed Attention-based Prompting for Rehearsal-Free Continual Learning*. **CVPR 2023** [[paper](https://arxiv.org/abs/2211.13218)]
 - `LAE`: *A Unified Continual Learning Framework with General Parameter-Efficient Tuning*. **ICCV 2023** [[paper](https://arxiv.org/abs/2303.10070)]
 - `EASE`: *Expandable Subspace Ensemble for Pre-Trained Model-Based Class-Incremental Learning*. **CVPR 2024** [[paper](https://openaccess.thecvf.com/content/CVPR2024/html/Zhou_Expandable_Subspace_Ensemble_for_Pre-Trained_Model-Based_Class-Incremental_Learning_CVPR_2024_paper.html)]
-- `ASP`: *Few-Shot Class Incremental Learning with Attention-Aware Self-Adaptive Prompt*. [[paper](https://arxiv.org/abs/2403.09857)] [[code](https://github.com/dawnliu35/fscil-asp)]
+- `ASP`: *Few-Shot Class Incremental Learning with Attention-Aware Self-Adaptive Prompt*. **ECCV 2024** [[paper](https://arxiv.org/abs/2403.09857)] [[code](https://github.com/dawnliu35/fscil-asp)]
 - `SEC-Prompt`: *SEC-Prompt:SEmantic Complementary Prompting for Few-Shot Class-Incremental Learning*. **CVPR 2025** [[paper](https://openaccess.thecvf.com/content/CVPR2025/html/Liu_SEC-PromptSEmantic_Complementary_Prompting_for_Few-Shot_Class-Incremental_Learning_CVPR_2025_paper.html)]
-- `SMP`: *Sculpting Margin Penalty: Intra-Task Adapter Merging and Classifier Calibration for Few-Shot Class-Incremental Learning*. [[paper](https://arxiv.org/abs/2508.05094)] [[code](https://github.com/beiyan1911/SMP)]
+- `SMP`: *Sculpting Margin Penalty: Intra-Task Adapter Merging and Classifier Calibration for Few-Shot Class-Incremental Learning*. **IEEE TCSVT 2026** [[paper](https://ieeexplore.ieee.org/document/11422019)] [[preprint](https://arxiv.org/abs/2508.05094)] [[code](https://github.com/beiyan1911/SMP)]
 - `InfLoRA`: *InfLoRA: Interference-Free Low-Rank Adaptation for Continual Learning*. **CVPR 2024** [[paper](https://arxiv.org/abs/2404.00228)]
 - `SD-LoRA`: *SD-LoRA: Scalable Decoupled Low-Rank Adaptation for Class Incremental Learning*. **ICLR 2025** [[paper](https://arxiv.org/abs/2501.13198)]
 
 | Method | Source directory | Configuration directory |
 | --- | --- | --- |
-| FineTune, SimpleCIL, L2P, DualPrompt, CODA-Prompt, LAE, EASE, APER | [`CIL_Model`](CIL_Model) | `CIL_Model/configs/<method>/` |
+| FineTune, SimpleCIL, L2P, DualPrompt, CODA-Prompt, LAE, EASE, APER, InfLoRA, SD-LoRA | Repository root | `configs/<method>/` |
 | ASP | [`FSCIL-ASP-main`](FSCIL-ASP-main) | `FSCIL-ASP-main/configs/` |
 | SEC-Prompt | [`SEC-Prompt-main`](SEC-Prompt-main) | `SEC-Prompt-main/configs/` |
-| SMP | [`SMP-main`](SMP-main) | `SMP-main/configs/<setting>/` |
-| InfLoRA | [`CIL_Model/InfLoRA-main`](CIL_Model/InfLoRA-main) | `CIL_Model/InfLoRA-main/configs/` |
-| SD-LoRA | [`CIL_Model/SD-Lora-CL-main`](CIL_Model/SD-Lora-CL-main) | `CIL_Model/SD-Lora-CL-main/configs/` |
+| SMP | [`SMP-main`](SMP-main) | `SMP-main/exps_px/` |
 
 ---
 
@@ -56,15 +54,11 @@ cd Awesome-FSCIL
 
 ### 🛠️ Dependencies
 
-The primary framework uses the following dependencies:
+The primary framework uses the following key dependencies:
 
 1. [PyTorch 2.0.1](https://github.com/pytorch/pytorch)
 2. [torchvision 0.15.2](https://github.com/pytorch/vision)
 3. [timm 0.6.12](https://github.com/huggingface/pytorch-image-models)
-4. [tqdm](https://github.com/tqdm/tqdm)
-5. [numpy](https://github.com/numpy/numpy)
-6. [scipy](https://github.com/scipy/scipy)
-7. [easydict](https://github.com/makinacorpus/easydict)
 
 Each reproduction directory retains its upstream environment. SMP recommends Python 3.10, PyTorch 2.1.0, torchvision 0.16.0, and timm 0.6.7; see [`SMP-main/install.txt`](SMP-main/install.txt) for the full list. ASP-specific requirements are in [`FSCIL-ASP-main/requirements.txt`](FSCIL-ASP-main/requirements.txt).
 
@@ -79,12 +73,23 @@ Each reproduction directory retains its upstream environment. SMP recommends Pyt
    - **backbone_type**: Pre-trained ViT backbone and initialization variant.
    - **seed**, **shuffle**, and **device**: Class order and execution-device settings.
 
-2. Run L2P in `CIL_Model`, for example:
+2. Run the unified CIL methods from the repository root, for example:
 
    ```bash
-   cd CIL_Model
    python main.py --config=./configs/l2p/l2p_cifar_B60_Inc5.json
    ```
+
+   InfLoRA and SD-LoRA use the same entry point, for example:
+
+   ```bash
+   python main.py --config=./configs/inflora/IN1K-Shuffle1993/inflora_cub_B100_Inc10.json
+   python main.py --config=./configs/sdlora/IN1K-Shuffle1993/sdlora_cub_B100_Inc10.json
+   ```
+
+   The repository stores one run log per configuration under
+   `logs/<Setting>/<Method>-<Setting>-<dataset>_<backbone>_<init_cls>_<increment>_<seed>.log`.
+   This keeps each class-order setting together while the method prefix prevents
+   filename collisions between methods that share a backbone.
 
 3. ASP and SEC-Prompt use the entry point in their own directories:
 
@@ -104,14 +109,7 @@ Run one setting:
 
 ```bash
 cd SMP-main
-CUDA_VISIBLE_DEVICES=0 ./train_smp.sh IN1K-NoShuffle1993
-```
-
-Submit all SMP experiments in workbook order:
-
-```bash
-cd SMP-main
-./submit_smp_gpu0.sh
+./train_smp.sh IN1K-NoShuffle1993
 ```
 
 The default configurations do not save checkpoints (`save_checkpoints: false`). Enable the field explicitly in the corresponding JSON file when checkpoints are required.
@@ -120,7 +118,12 @@ The default configurations do not save checkpoints (`save_checkpoints: false`). 
 
 ## 📊 Results and Evaluation
 
-[`FSCIL_Results.xlsx`](FSCIL_Results.xlsx) summarizes results across methods, datasets, and class orders. SMP has completed 8 of the 16 planned runs; see [`SMP-main/EXPERIMENT_STATUS.md`](SMP-main/EXPERIMENT_STATUS.md) for the authoritative status, final Top-1 curves, and resume commands.
+[`FSCIL_IN1K_Baselines.xlsx`](FSCIL_IN1K_Baselines.xlsx) summarizes results across methods, datasets, and class orders. SMP has completed all 16 planned runs. See [`SMP-main/EXPERIMENT_STATUS.md`](SMP-main/EXPERIMENT_STATUS.md) for the final Top-1 curves and [`TRAINING_AND_INFERENCE_PARAMETERS.md`](TRAINING_AND_INFERENCE_PARAMETERS.md) for the paper- and implementation-audited parameter formulas.
+
+For workbook traceability:
+
+- `VERIFIED` means every populated result value in that method row matched a log currently retained under `logs/`, at the displayed precision.
+- `NO LOCAL LOG` identifies a paper-only comparator that cannot be claimed as locally reproduced.
 
 Training and inference metrics are reported separately for every task:
 
@@ -140,7 +143,7 @@ Future evaluation uses independent loaders: `future_train_loader` only construct
 | miniImageNet | 100 | FSCIL benchmark | [Google Drive](https://drive.google.com/file/d/1Nq7J-y17cNRDs7bG2h_PTbX1vBYKJ16u/view?usp=sharing) |
 | ImageNet-R | 200 | FSCIL benchmark | [Google Drive](https://drive.google.com/file/d/1SG4TbiL8_DooekztyCVK8mPmfhMo8fkR/view?usp=sharing) / [OneDrive](https://entuedu-my.sharepoint.com/:u:/g/personal/n2207876b_e_ntu_edu_sg/EU4jyLL29CtBsZkB6y-JSbgBzWF5YHhBAUz1Qw8qM2954A?e=hlWpNW) |
 
-SMP reads its dataset root from `data_root` in the configuration and allows the `FSCIL_DATA_ROOT` environment variable to override it. Some legacy implementations still use absolute paths in their own `utils/data.py`; update the corresponding `train_dir` and `test_dir` mappings when using a custom root.
+SMP reads its dataset root from `data_root` in the configuration and allows the `FSCIL_DATA_ROOT` environment variable to override it. Some legacy implementations still use absolute paths in their own `utils/data.py`; update the corresponding `train_dir` and `test_dir` mappings for your machine.
 
 ```python
 def download_data(self):
